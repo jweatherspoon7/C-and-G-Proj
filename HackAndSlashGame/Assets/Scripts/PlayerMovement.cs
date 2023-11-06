@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
             float targetAngle = (Mathf.Atan2(horizInput, vertInput) * Mathf.Rad2Deg) + camTransform.eulerAngles.y;
 
             transform.rotation = Quaternion.Euler(0, targetAngle, 0);
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            //transform.Translate(Vector3.forward * speed * Time.deltaTime);
             lastRotation = targetAngle;
         }
     }
