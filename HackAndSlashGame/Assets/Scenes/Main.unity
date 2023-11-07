@@ -321,7 +321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433186917}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.009597874, y: 1e-45, z: -0, w: 0.9999539}
+  m_LocalRotation: {x: 0.009597844, y: 0.0000000127779645, z: -1.226465e-10, w: 0.999954}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -964,8 +964,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142703436}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.064443804, y: -0, z: -0, w: 0.99792135}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.25015417, y: -0.00000003606849, z: 0.00000000931897, w: 0.96820605}
+  m_LocalPosition: {x: 0, y: 1.7508452, z: 3.155457}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1524,6 +1524,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1621334158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6503425854364303048, guid: 45d534ea263d7294d9c0908b750eda37, type: 3}
+  m_PrefabInstance: {fileID: 2932380651121554708}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1621334163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621334158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22d8190ae8366c4f8965fe32b2237bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2128800650
 GameObject:
   m_ObjectHideFlags: 3
@@ -1611,6 +1628,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 570606006425632264, guid: 45d534ea263d7294d9c0908b750eda37, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+        'mixamorig:Spine1'\n\tTransform 'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftLeg'\n\tTransform
+        'mixamorig:LeftShoulder'\n\tTransform 'mixamorig:RightFoot'\n\tTransform
+        'mixamorig:Head'\n\tTransform 'mixamorig:LeftUpLeg'\n\tTransform 'mixamorig:LeftArm'\n\tand
+        more ...\n\tFrom animation clip 'mixamo.com'"
+      objectReference: {fileID: 0}
     - target: {fileID: 4344344447130390160, guid: 45d534ea263d7294d9c0908b750eda37, type: 3}
       propertyPath: camTransform
       value: 
@@ -1662,7 +1689,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6503425854364303048, guid: 45d534ea263d7294d9c0908b750eda37, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1621334163}
   m_SourcePrefab: {fileID: 100100000, guid: 45d534ea263d7294d9c0908b750eda37, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
