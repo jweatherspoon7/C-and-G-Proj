@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     private Animator playerAnim;
     private float attackCooldown = 0.3f;
     private float startTime;
+    private int numOfClicks = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,10 @@ public class PlayerAttack : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
+            numOfClicks++;
+            numOfClicks = Mathf.Clamp(numOfClicks, 0, 3);
+            Debug.Log(numOfClicks);
+
             startTime = Time.time;
             playerAnim.SetInteger("numOfClicks", 1);
             playerAnim.SetBool("canMove", false);
@@ -34,6 +39,12 @@ public class PlayerAttack : MonoBehaviour
             playerAnim.SetInteger("numOfClicks", 0);
             playerAnim.SetBool("canMove", true);
         }
+    }
+
+    void OnClick()
+    {
+       numOfClicks = Mathf.Clamp(numOfClicks, 0,3);
+
     }
 }
     
