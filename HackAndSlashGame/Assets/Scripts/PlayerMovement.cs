@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         //gets desired direction of player
         Vector3 direction = new Vector3(vertInput, 0, horizInput).normalized;
 
-        if (direction.magnitude >= 0.01 )
+        if (direction.magnitude >= 0.01 && (playerAnim.GetCurrentAnimatorStateInfo(0).IsName("Run With Sword") || playerAnim.GetCurrentAnimatorStateInfo(0).IsName("Standing Idle")))
         {
             //get the desired angle relative to the camera position
             float targetAngle = (Mathf.Atan2(horizInput, vertInput) * Mathf.Rad2Deg) + camTransform.eulerAngles.y;

@@ -41,10 +41,15 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    void OnClick()
+    void OnClickAttack(string animationName, int clicks)
     {
-       numOfClicks = Mathf.Clamp(numOfClicks, 0,3);
 
+        if (!playerAnim.GetCurrentAnimatorStateInfo(0).IsName(animationName))
+        {
+            playerAnim.SetInteger("numOfClicks", 0);
+            playerAnim.SetBool("canMove", true);
+            numOfClicks = 0;
+        }
     }
 }
     
