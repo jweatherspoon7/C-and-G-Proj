@@ -5,5 +5,8 @@ using UnityEngine;
 public class IdleState : State
 {
     //use override keyword to override methods of base class
-    public override void OnEnter() { }
+    public override void OnUpdate() 
+    {
+        if (Input.GetMouseButtonDown(0)) { }
+    }
 }

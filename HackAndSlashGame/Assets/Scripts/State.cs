@@ -22,7 +22,12 @@ public abstract class State
 
     public void OnStateUpdate() { }
 
-    public void OnUpdate() { }
+    public virtual void OnUpdate() { }
+
+    public void OnStateFixedUpdate() {  }
+
+    public virtual void OnFixedUpdate() { }
+
 
     public virtual void OnStateExit() { }
 
