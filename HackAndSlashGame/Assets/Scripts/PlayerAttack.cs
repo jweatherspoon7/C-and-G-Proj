@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     private Animator playerAnim;
     private float attackCooldown = 0.3f;
     private float comboTimeInterval = 1;
+    private string lastAttackAnim;
     private float mouseButton0DownTime; //use to differentiate a click or hold on left mouse button
     public int maxNumOfClicks = 2;
 
@@ -20,13 +21,17 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         OnClickAttack();
+        Debug.Log(playerAnim.GetCurrentAnimatorClipInfo(0)[0].clip.name);
+        Debug.Log("click num" + playerAnim.GetInteger("numOfClicks"));
 
         if (playerAnim.GetNextAnimatorStateInfo(0).IsTag("attackAnim") &&
-                playerAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > comboTimeInterval)
+                playerAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= comboTimeInterval)
         {
             playerAnim.SetInteger("numOfClicks", 0);
             playerAnim.SetBool("canMove", true);
+            //Debug.Log("time " + playerAnim.GetCurrentAnimatorStateInfo(0).normalizedTime);
         }
+
         /*
         if(Input.GetMouseButtonDown(0))
         {
@@ -54,7 +59,7 @@ public class PlayerAttack : MonoBehaviour
             //use to tell if player is clicking or holding
             float mouse0Time = Time.time - mouseButton0DownTime;
             int numOfClicks = Mathf.Clamp(playerAnim.GetInteger("numOfClicks") + 1,0,maxNumOfClicks);
-            Debug.Log(numOfClicks);
+            //Debug.Log(numOfClicks);
 
             if(numOfClicks == 1 && playerAnim.GetBool("canAttack"))
             {
