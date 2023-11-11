@@ -11,7 +11,8 @@ public class StateController : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        ChangeCurrentState(new IdleState());
+        currentState = new IdleState();
+        ChangeCurrentState(currentState);
     }
 
     // Update is called once per frame
@@ -20,12 +21,14 @@ public class StateController : MonoBehaviour
         currentState.OnStateUpdate();
     }
 
-    void ChangeCurrentState(State newState)
+    //Use to change states
+    public void ChangeCurrentState(State newState)
     {
         if(currentState != null)
         {
             currentState.OnStateExit();
         }
+
         currentState = newState;
         currentState.OnStateEnter(this, anim);
     }
