@@ -13,9 +13,10 @@ public class IdleState : State
 
     public override void OnUpdate() 
     {
-        if (Input.GetMouseButtonDown(0)) 
+        if (Input.GetMouseButtonDown(0) && animator.GetBool("canAttack"))  
         {
             stateController.ChangeCurrentState(new LightAttack1());
         }
     }
+
 }
