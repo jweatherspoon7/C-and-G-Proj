@@ -18,5 +18,4 @@ public class IdleState : State
             stateController.ChangeCurrentState(new LightAttack1());
         }
     }
-
 }
