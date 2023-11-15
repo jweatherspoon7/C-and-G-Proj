@@ -7,7 +7,10 @@ public abstract class State
     //on classes and derived classes can use this variable
     protected StateController stateController;
     protected Animator animator;
+
+    //use to get time since state switch in different updates
     protected float fixedTime;
+    protected float time;
 
     //inherited classes won't be able to override this method
     //use for what I want inherited all classes to have
@@ -21,13 +24,17 @@ public abstract class State
     //virtual keyword allows for inherited classes to overide the method
     public virtual void OnEnter() {/*use for inherited classes*/ }
 
-    public void OnStateUpdate() { OnUpdate(); }
+    public void OnStateUpdate() 
+    {
+        time += Time.deltaTime;
+        OnUpdate(); 
+    }
 
     public virtual void OnUpdate() { }
 
     public void OnStateFixedUpdate() 
     { 
-        fixedTime = Time.deltaTime;
+        fixedTime += Time.deltaTime;
         OnFixedUpdate();  
     }
 

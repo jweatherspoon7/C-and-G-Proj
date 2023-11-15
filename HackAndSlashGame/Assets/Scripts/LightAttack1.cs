@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class LightAttack1 : BaseAttack
 {
+    private bool nextAttack = false;
     public override void OnEnter()
     {
-        Debug.Log("Enter attack 1");
         base.OnEnter();
-        animator.SetTrigger("lightAttack1Trig");
+        animator.SetBool("LightAttack1Bool", true);
+        Debug.Log("Enter attack 1");
     }
 
     public override void OnUpdate()
@@ -17,16 +18,25 @@ public class LightAttack1 : BaseAttack
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("LightAttack1"))
         {
-            if(shouldCombo)
+            if(shouldCombo && animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.8)
             {
-                Debug.Log("attack 1 to 2");
+                nextAttack = true;
                 stateController.ChangeCurrentState(new LightAttack2());
             }
-            else
+            else if(animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8)
             {
-                Debug.Log("attack 1 to idle");
                 stateController.ChangeCurrentState(new IdleState());
             }
         }
+    }
+
+    public override void OnExit()
+    {
+        if (!nextAttack)
+        {
+            base.OnExit();
+        }
+
+        animator.SetBool("LightAttack1Bool", false);
     }
 }

@@ -10,15 +10,20 @@ public class BaseAttack : State
 
     public override void OnEnter()
     {
-        Debug.Log("BaseAttack enter");
         animator.SetBool("canMove", false);
         animator.SetBool("isAttacking", true);
     }
     public override void OnUpdate()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonUp(0))
         {
             shouldCombo = true;
         }
+    }
+
+    public override void OnExit()
+    {
+        animator.SetBool("canMove", true);
+        animator.SetBool("isAttacking", false);
     }
 }

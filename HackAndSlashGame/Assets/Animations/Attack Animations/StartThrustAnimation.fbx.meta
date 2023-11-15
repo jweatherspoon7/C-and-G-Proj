@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ddb79b2730e10364c94fcd2f5ad52fe2
+guid: 0208384dd24222f49b2a2147ea337bf0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,18 +33,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: ThrustAttackAnimation
+      name: StartThrustAnimation
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 71
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 0
@@ -528,23 +528,23 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: ThrustAttackAnimation(Clone)
+    - name: StartThrustAnimation(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Beta_Surface
-      parentName: ThrustAttackAnimation(Clone)
+      parentName: StartThrustAnimation(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Beta_Joints
-      parentName: ThrustAttackAnimation(Clone)
+      parentName: StartThrustAnimation(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:Hips
-      parentName: ThrustAttackAnimation(Clone)
+      parentName: StartThrustAnimation(Clone)
       position: {x: 0.000000033527613, y: 1.0719984, z: -0.0017409252}
       rotation: {x: 0.00645836, y: 0.000000021703691, z: -0.00000024461747, w: 0.99997914}
       scale: {x: 1, y: 1, z: 1}
