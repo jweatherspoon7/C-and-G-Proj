@@ -32,4 +32,14 @@ public class StateController : MonoBehaviour
         currentState = newState;
         currentState.OnStateEnter(this, anim);
     }
+
+    public void StartAnimation()
+    {
+        currentState.SetStartAnimation();
+    }
+
+    public void EndAnimation()
+    {
+        currentState.SetEndAnimation();
+    }
 }

@@ -12,17 +12,22 @@ public abstract class State
     protected float fixedTime;
     protected float time;
 
+    //use to tell when animation starts/ends
+    protected bool startAnimation;
+    protected bool endAnimation;
+
     //inherited classes won't be able to override this method
     //use for what I want inherited all classes to have
     public void OnStateEnter(StateController sc, Animator anim)
     {
         animator = anim;
         stateController = sc;
+
         OnEnter();
     }
 
     //virtual keyword allows for inherited classes to overide the method
-    public virtual void OnEnter() {/*use for inherited classes*/ }
+    public virtual void OnEnter() { /*use for inherited classes*/ }
 
     public void OnStateUpdate() 
     {
@@ -43,4 +48,13 @@ public abstract class State
     public void OnStateExit() { OnExit(); }
 
     public virtual void OnExit() { }
+
+    public void SetStartAnimation() { startAnimation = true; }
+
+    public bool GetStartAnimation() { return startAnimation; }
+
+    public void SetEndAnimation() { endAnimation = true; }
+
+
+
 }

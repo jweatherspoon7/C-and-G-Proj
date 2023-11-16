@@ -16,22 +16,25 @@ public class IdleState : State
 
     public override void OnUpdate() 
     {
-        if(animator.GetBool("canAttack"))
+        if(startAnimation) //will only update if animation has started
         {
-            if (Input.GetMouseButtonDown(0))
+            if (animator.GetBool("canAttack"))
             {
-                timeOnDown = time;
-            }
+                if (Input.GetMouseButtonDown(0))
+                {
+                    timeOnDown = time;
+                }
 
-            //to detect hold vs click
-            if (Input.GetMouseButton(0) && time - timeOnDown > 0.25)
-            {
-                stateController.ChangeCurrentState(new StartThrustAttackState());
-            }
+                //to detect hold vs click
+                if (Input.GetMouseButton(0) && time - timeOnDown > 0.25)
+                {
+                    stateController.ChangeCurrentState(new StartThrustAttackState());
+                }
 
-            if (Input.GetMouseButtonUp(0))
-            {
-                stateController.ChangeCurrentState(new LightAttack1());
+                if (Input.GetMouseButtonUp(0))
+                {
+                    stateController.ChangeCurrentState(new LightAttack1());
+                }
             }
         }
     }
