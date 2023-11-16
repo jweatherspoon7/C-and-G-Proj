@@ -6,18 +6,19 @@ public class StartThrustAttackState : BaseAttack
 {
     public override void OnEnter()
     {
-        base.OnEnter();
         animator.SetBool("ThrustAttackBool", true);
         animator.SetBool("MouseButton0DownHold", true);
-        Debug.Log("StartThrustAttack");
+        animator.SetBool("canMove", false);
+        animator.SetBool("isAttacking", true);
     }
 
     public override void OnUpdate()
     {
         base.OnUpdate();
+
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("StartThrustAttack"))
         {
-            if(shouldCombo)
+            if(Input.GetMouseButtonUp(0))
             {
                 stateController.ChangeCurrentState(new ThrustAttackState());
             }

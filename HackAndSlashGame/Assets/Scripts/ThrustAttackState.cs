@@ -6,22 +6,12 @@ public class ThrustAttackState : BaseAttack
 {
     public override void OnEnter()
     {
+        stateName = "ThrustAttack";
+        finisher = true;
         base.OnEnter();
-        animator.SetBool("ThrustAttackBool", true);
-        Debug.Log("ThrustAttack");
     }
 
-    public override void OnUpdate()
-    {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("ThrustAttack"))
-        {
-            stateController.ChangeCurrentState(new IdleState());
-        }
-    }
+    public override void OnUpdate() { base.OnUpdate(); }
 
-    public override void OnExit()
-    {
-        base.OnExit();
-        animator.SetBool("ThrustAttackBool", false);
-    }
+    public override void OnExit() { base.OnExit(); }
 }

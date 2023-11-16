@@ -7,22 +7,12 @@ public class LightAttack3 : BaseAttack
     //script for first move in a light combo set
     public override void OnEnter()
     {
+        stateName = "LightAttack3";
+        finisher = true;
         base.OnEnter();
-        animator.SetBool("LightAttack3Bool", true);
-        Debug.Log("LigtAttack3");
     }
 
-    public override void OnUpdate()
-    {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("LightAttack3"))
-        {
-            stateController.ChangeCurrentState(new IdleState());
-        }
-    }
+    public override void OnUpdate() { base.OnUpdate(); }
 
-    public override void OnExit()
-    {
-        base.OnExit();
-        animator.SetBool("LightAttack3Bool", false);
-    }
+    public override void OnExit() { base.OnExit(); }
 }
