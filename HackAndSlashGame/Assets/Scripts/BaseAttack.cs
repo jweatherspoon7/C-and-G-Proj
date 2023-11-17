@@ -51,11 +51,14 @@ public class BaseAttack : State
 
     private void listenForNextInput()
     {
-        if (shouldCombo && animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.8)
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.8)
         {
-            stateController.ChangeCurrentState(nextAttackState);
+            if(shouldCombo)
+            {
+                stateController.ChangeCurrentState(nextAttackState);
+            }
         }
-        else if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8)
+        else
         {
             //go back to idle if no next attack
             stateController.ChangeCurrentState(new IdleState());

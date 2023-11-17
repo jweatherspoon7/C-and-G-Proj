@@ -76,7 +76,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.06
+      value: 0.042
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -138,6 +138,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4344344447130390160}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8268116571558281362}
   m_SourcePrefab: {fileID: 100100000, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
 --- !u!4 &5707197897999613009 stripped
 Transform:
@@ -168,8 +171,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.29844692, y: 1.834151, z: 0.2331586}
-  m_Center: {x: 0.00014136732, y: 0.88515127, z: 0.043587454}
+  m_Size: {x: 0.29844692, y: 1.8537617, z: 0.2331586}
+  m_Center: {x: 0.00014136732, y: 0.87534595, z: 0.043587454}
 --- !u!54 &938592136479293092
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -211,3 +214,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camTransform: {fileID: 0}
   turnSmoothTime: 0.1
+--- !u!114 &8268116571558281362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503425854364303048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17774d89ae13754a9c22330ccec6da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
