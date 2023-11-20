@@ -33,7 +33,7 @@ public class IdleState : State
 
                 if (Input.GetMouseButtonUp(0))
                 {
-                    stateController.ChangeCurrentState(new LightAttack1());
+                    stateController.ChangeCurrentState(new LightAttack1State());
                 }
             }
         }

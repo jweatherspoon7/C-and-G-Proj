@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightAttack3 : BaseAttack
+public class LightAttack2State : BaseAttack
 {
-    //script for first move in a light combo set
     public override void OnEnter()
     {
-        stateName = "LightAttack3";
-        finisher = true;
+        stateName = "LightAttack2State";
+        nextAttackState = new LightAttack3State();
         base.OnEnter();
     }
 
