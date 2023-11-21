@@ -2,34 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//script to start raycasts on weapons
 public class AttackRaycasts : MonoBehaviour
 {
-    //use to get 
+    public LayerMask layerMask;
     public Transform[] rayCastObjTransforms;
     private Vector3[] lastPositions;
 
     private bool fireRaycasts = false;
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if(fireRaycasts)
         {
             for(int i = 0; i < rayCastObjTransforms.Length; i++)
             {
-                Vector3 raycastDirection = lastPositions[i] - rayCastObjTransforms[i].position;
+                Transform raycastObjTransform = rayCastObjTransforms[i];
 
-                Ray raycast = new Ray(rayCastObjTransforms[i].position, raycastDirection.normalized);
+                Vector3 raycastDirection = lastPositions[i] - raycastObjTransform.position;
 
-                RaycastHit[] hitData = Physics.RaycastAll(raycast, raycastDirection.magnitude);
+                Ray raycast = new Ray(raycastObjTransform.position, raycastDirection.normalized);
 
-                Debug.DrawRay(rayCastObjTransforms[i].position, raycastDirection, Color.red);
+                RaycastHit[] hitData = Physics.RaycastAll(raycast, raycastDirection.magnitude, layerMask);
+                HandleRaycastHit(hitData, raycastObjTransform);
 
-                lastPositions[i] = rayCastObjTransforms[i].position;    
+                Debug.DrawRay(raycastObjTransform.position, raycastDirection, Color.red);
+
+                lastPositions[i] = raycastObjTransform.position;    
             }
         }
     }
 
+    //use for animation events to start raycasts on weapons
     public void StartRaycasts()
     {
         lastPositions = new Vector3[rayCastObjTransforms.Length];
@@ -40,8 +44,19 @@ public class AttackRaycasts : MonoBehaviour
         fireRaycasts = true;
     }
 
+    //use for animation events to end raycasts on weapons
     public void EndRaycasts()
     {
-        fireRaycasts = true;
+        fireRaycasts = false;
+    }
+
+    private void HandleRaycastHit(RaycastHit[] raycastHitArr, Transform caster)
+    {
+        foreach (RaycastHit hitObj in raycastHitArr)
+        {
+            GameObject obj = hitObj.transform.gameObject;
+
+            Debug.Log(obj.name + " was hit by " + caster.name);
+        }
     }
 }

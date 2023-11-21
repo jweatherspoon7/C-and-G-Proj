@@ -6,12 +6,14 @@ public class StateController : MonoBehaviour
 {
     State currentState;
     Animator anim;
+    AttackRaycasts attackRaycasts;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         currentState = new IdleState();
+        attackRaycasts = GetComponent<AttackRaycasts>();
         ChangeCurrentState(currentState);
     }
 
@@ -30,7 +32,7 @@ public class StateController : MonoBehaviour
         }
 
         currentState = newState;
-        currentState.OnStateEnter(this, anim);
+        currentState.OnStateEnter(this, anim, attackRaycasts);
     }
 
     public void StartAnimation()

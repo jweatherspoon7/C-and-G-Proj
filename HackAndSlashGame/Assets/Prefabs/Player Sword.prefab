@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6988565991686424908}
   - component: {fileID: 678195646676573580}
   - component: {fileID: 8240511541506705592}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Raycast Caster (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 1693192030686980825}
   - component: {fileID: 7026511636344665363}
   - component: {fileID: 180957553418193156}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Raycast Caster (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 1131340434385772176}
   - component: {fileID: 6503438984128383722}
   - component: {fileID: 3918431825261196729}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Raycast Caster (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ GameObject:
   - component: {fileID: 2772636776505035069}
   - component: {fileID: 5907905323208151961}
   - component: {fileID: 8785029360685908489}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Raycast Caster (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 6158664186290454865}
   - component: {fileID: 2259842276495528060}
   - component: {fileID: 2320432683218026917}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 7173364776825311364}
   - component: {fileID: 6355915504535743289}
   - component: {fileID: 7674706928594753646}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Raycast Caster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
