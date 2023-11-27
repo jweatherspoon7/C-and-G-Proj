@@ -415,7 +415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433186917}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.009597879, y: 0.0000000059391128, z: -5.700557e-11, w: 0.999954}
+  m_LocalRotation: {x: 0.009597891, y: -0.000000030961832, z: 2.9718197e-10, w: 0.999954}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -852,7 +852,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04326276, y: -0.0015186055, z: 0.000065760716, w: 0.9990626}
+  m_LocalRotation: {x: 0.043262757, y: -0.0015186055, z: 0.00006576071, w: 0.9990626}
   m_LocalPosition: {x: -1.1943045, y: 0.3968048, z: -7.723664}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -964,8 +964,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142703436}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1888726, y: -0.000000030166625, z: 0.000000005802077, w: 0.9820016}
-  m_LocalPosition: {x: 0, y: 1.4110184, z: 2.0388389}
+  m_LocalRotation: {x: 0.19365452, y: -0.000000030138004, z: 0.0000000059489755, w: 0.9810698}
+  m_LocalPosition: {x: 0, y: 1.4444633, z: 2.1289282}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1595,7 +1595,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128800650}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.043262765, y: -0.0015186054, z: 0.000065760694, w: 0.9990626}
+  m_LocalRotation: {x: 0.04326276, y: -0.0015186053, z: 0.000065760694, w: 0.9990626}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1719,6 +1719,14 @@ PrefabInstance:
     - target: {fileID: 2172286305185871261, guid: a8946eebab536a0428c4bf138549ad1f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5243788888739246055, guid: a8946eebab536a0428c4bf138549ad1f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c843ace6e9e8e534892cfe8fa5941e24, type: 2}
+    - target: {fileID: 5243788888739246055, guid: a8946eebab536a0428c4bf138549ad1f, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

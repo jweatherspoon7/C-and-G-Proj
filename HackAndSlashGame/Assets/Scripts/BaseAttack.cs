@@ -16,7 +16,7 @@ public class BaseAttack : State
         animator.SetBool("isAttacking", true);
         animator.SetBool(stateName + "Bool", true);
 
-        Debug.Log(stateName);
+        //Debug.Log(stateName);
     }
     public override void OnUpdate()
     {
@@ -51,7 +51,7 @@ public class BaseAttack : State
 
     private void listenForNextInput()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.8)
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.6)
         {
             if(shouldCombo)
             {
