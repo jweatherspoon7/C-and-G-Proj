@@ -7,7 +7,6 @@ public abstract class State
     //on classes and derived classes can use this variable
     protected StateController stateController;
     protected Animator animator;
-    protected StateMachineBehaviour stateBehaviour;
 
     //use to get time since state switch in different updates
     protected float fixedTime;
@@ -15,11 +14,10 @@ public abstract class State
 
     //inherited classes won't be able to override this method
     //use for what I want inherited all classes to have
-    public void OnStateEnter(StateController sc, Animator anim, StateMachineBehaviour newBehavior)
+    public void OnStateEnter(StateController sc, Animator anim)
     {
         animator = anim;
         stateController = sc;
-        stateBehaviour = newBehavior;
 
         OnEnter();
     }

@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//class to represent Attack1 substatemachine
 public class LightAttack1State : BaseAttack
 {
     public override void OnEnter()
     {
-        stateName = "LightAttack1";
-        nextAttackState = new LightAttack2State();
-        base.OnEnter();
+        animator.SetTrigger("attack1Trig");
     }
 
-    public override void OnUpdate(){ base.OnUpdate(); }
+    public override void OnUpdate()
+    { 
 
-    public override void OnExit() { base.OnExit(); }
+    }
+
+    public override void OnExit() 
+    { 
+    
+    }
 }

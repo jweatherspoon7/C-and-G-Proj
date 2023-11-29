@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         //gets desired direction of player
         Vector3 direction = new Vector3(vertInput, 0, horizInput).normalized;
 
-        if (direction.magnitude >= 0.01 && (playerAnim.GetCurrentAnimatorStateInfo(0).IsName("Run With Sword") || playerAnim.GetCurrentAnimatorStateInfo(0).IsName("Idle")))
+        if (direction.magnitude >= 0.01 && (playerAnim.GetCurrentAnimatorStateInfo(0).IsName("Walk") || playerAnim.GetCurrentAnimatorStateInfo(0).IsName("Idle")))
         {
             //get the desired angle relative to the camera position
             float targetAngle = (Mathf.Atan2(horizInput, vertInput) * Mathf.Rad2Deg) + camTransform.eulerAngles.y;
@@ -47,12 +47,12 @@ public class PlayerMovement : MonoBehaviour
             //set player rotation
             transform.rotation = Quaternion.Euler(0, angle, 0);
 
-            playerAnim.SetInteger("walkSpeed", 1);
+            playerAnim.SetBool("isWalking", true);
             //transform.Translate(Vector3.forward * speed * Time.deltaTime); only use when moving by position
         }
         else
         {
-            playerAnim.SetInteger("walkSpeed", 0);
+            playerAnim.SetBool("isWalking", false);
         }
     }
 }
