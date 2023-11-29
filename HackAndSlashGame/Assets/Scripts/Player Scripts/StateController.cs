@@ -11,8 +11,8 @@ public class StateController : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        currentState = new IdleState();
-        StateMachineBehaviour stateBehavior = anim.GetBehaviour<IdleStateBehavior>();
+        State.SetVariables(anim, this);
+        ChangeState(new IdleState());
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class StateController : MonoBehaviour
         currentState.OnStateUpdate();
     }
 
-    public void ChangeCurrentState(State newState)
+    public void ChangeState(State newState)
     {
         if (currentState != null)
         {
@@ -29,6 +29,6 @@ public class StateController : MonoBehaviour
         }
 
         currentState = newState;
-        currentState.OnStateEnter(this, anim);
+        currentState.OnStateEnter();
     }
 }

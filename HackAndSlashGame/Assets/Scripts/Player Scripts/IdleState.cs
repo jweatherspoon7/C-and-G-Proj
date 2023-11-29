@@ -5,23 +5,25 @@ using UnityEngine;
 public class IdleState : State
 {
     private double timeOnDown;
+    private IdleStateBehavior behavior;
 
     //use override keyword to override methods of base class
     public override void OnEnter()
     {
-        //Debug.Log("Idle");
+        Debug.Log("Idle");
         animator.SetBool("canMove", true);
         animator.SetBool("isAttacking", false);
+        behavior = animator.GetBehaviour<IdleStateBehavior>();
     }
 
     public override void OnUpdate() 
     {
 
-        if (false)
+        if (behavior.inUpdate)
         {
             if(Input.GetMouseButtonDown(0))
             {
-                stateController.ChangeCurrentState(new LightAttack1State());
+                stateController.ChangeState(new LightAttack1State());
             }
         }
     }

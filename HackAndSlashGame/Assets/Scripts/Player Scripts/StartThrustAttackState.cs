@@ -20,7 +20,7 @@ public class StartThrustAttackState : BaseAttack
         {
             if(Input.GetMouseButtonUp(0))
             {
-                stateController.ChangeCurrentState(new ThrustAttackState());
+                stateController.ChangeState(new ThrustAttackState());
             }
         }
     }

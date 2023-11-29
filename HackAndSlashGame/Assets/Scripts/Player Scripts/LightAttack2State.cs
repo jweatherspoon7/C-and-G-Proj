@@ -6,8 +6,6 @@ public class LightAttack2State : BaseAttack
 {
     public override void OnEnter()
     {
-        stateName = "LightAttack2";
-        nextAttackState = new LightAttack3State();
         base.OnEnter();
     }
 

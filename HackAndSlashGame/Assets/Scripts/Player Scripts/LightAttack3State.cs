@@ -7,8 +7,6 @@ public class LightAttack3State : BaseAttack
     //script for first move in a light combo set
     public override void OnEnter()
     {
-        stateName = "LightAttack3";
-        finisher = true;
         base.OnEnter();
     }
 

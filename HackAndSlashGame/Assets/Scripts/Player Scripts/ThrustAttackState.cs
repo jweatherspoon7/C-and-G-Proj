@@ -6,8 +6,7 @@ public class ThrustAttackState : BaseAttack
 {
     public override void OnEnter()
     {
-        stateName = "ThrustAttack";
-        finisher = true;
+
         base.OnEnter();
     }
 
