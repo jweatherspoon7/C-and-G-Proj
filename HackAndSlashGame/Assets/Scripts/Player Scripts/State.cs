@@ -7,23 +7,19 @@ public abstract class State
     //on classes and derived classes can use this variable
     protected StateController stateController;
     protected Animator animator;
-    protected AttackRaycasts attackRaycasts;
+    protected StateMachineBehaviour stateBehaviour;
 
     //use to get time since state switch in different updates
     protected float fixedTime;
     protected float time;
 
-    //use to tell when animation starts/ends
-    protected bool startAnimation;
-    protected bool endAnimation;
-
     //inherited classes won't be able to override this method
     //use for what I want inherited all classes to have
-    public void OnStateEnter(StateController sc, Animator anim, AttackRaycasts aRay)
+    public void OnStateEnter(StateController sc, Animator anim, StateMachineBehaviour newBehavior)
     {
         animator = anim;
         stateController = sc;
-        attackRaycasts = aRay;
+        stateBehaviour = newBehavior;
 
         OnEnter();
     }
@@ -50,13 +46,4 @@ public abstract class State
     public void OnStateExit() { OnExit(); }
 
     public virtual void OnExit() { }
-
-    public void SetStartAnimation() { startAnimation = true; }
-
-    public bool GetStartAnimation() { return startAnimation; }
-
-    public void SetEndAnimation() { endAnimation = true; }
-
-
-
 }
