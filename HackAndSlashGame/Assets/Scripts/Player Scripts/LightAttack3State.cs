@@ -4,13 +4,34 @@ using UnityEngine;
 
 public class LightAttack3State : BaseAttack
 {
+    bool inAnimation = false;
+    LightAttack3SSMBhvr SSMBehavior = animator.GetBehaviour<LightAttack3SSMBhvr>();
+
     //script for first move in a light combo set
     public override void OnEnter()
     {
+        Debug.Log("Enter LightAttack3");
         base.OnEnter();
+        animator.SetBool("nextAttack", true);
+        animator.SetTrigger("attack3Trig");
     }
 
-    public override void OnUpdate() { base.OnUpdate(); }
+    public override void OnUpdate()
+    {
+        if (SSMBehavior.inSubState && !inAnimation)
+        {
+            inAnimation = true;
+        }
 
-    public override void OnExit() { base.OnExit(); }
+        if (inAnimation)
+        {
+            stateController.ChangeState(new IdleState());
+        }
+    }
+
+    public override void OnExit()
+    {
+        Debug.Log("End LightAttack3");
+        base.OnExit();
+    }
 }

@@ -4,12 +4,47 @@ using UnityEngine;
 
 public class LightAttack2State : BaseAttack
 {
+    bool inAnimation = false;
+    LightAttack2SSMBhvr SSMBehavior = animator.GetBehaviour<LightAttack2SSMBhvr>();
+
     public override void OnEnter()
     {
+        Debug.Log("Enter LightAttack2");
         base.OnEnter();
+        animator.SetBool("nextAttack",true);
+        animator.SetTrigger("attack2Trig");
     }
 
-    public override void OnUpdate() { base.OnUpdate(); }
+    public override void OnUpdate() 
+    {
+        Debug.Log(SSMBehavior.inSubState);
+        if(SSMBehavior.inSubState && !inAnimation)
+        {
+            inAnimation = true;
+            animator.SetBool("nextAttack", false);
+        }
+        
+        if(inAnimation)
+        {
+            base.OnUpdate();
 
-    public override void OnExit() { base.OnExit(); }
+            if (shouldCombo)
+            {
+                stateController.ChangeState(new LightAttack3State());
+            }
+
+            if (!SSMBehavior.inSubState && !shouldCombo)
+            {
+                stateController.ChangeState(new IdleState());
+            }
+        }
+    }
+
+    public override void OnExit() 
+    {
+        if (!shouldCombo)
+        {
+            base.OnExit();
+        }
+    }
 }

@@ -16,10 +16,15 @@ public class BaseAttack : State
     {
         if(Input.GetMouseButtonDown(0))
         {
+            Debug.Log("shouldCombo");
             shouldCombo = true;
         }
+    }
 
-
+    public override void OnExit()
+    {
+        animator.SetBool("canMove", true);
+        animator.SetBool("isAttacking", false);
     }
 
 }
