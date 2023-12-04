@@ -7,15 +7,17 @@ public abstract class State
     //on classes and derived classes can use this variable
     protected static StateController stateController;
     protected static Animator animator;
+    protected static Camera camera;
 
     //use to get time since state switch in different updates
     protected float fixedTime;
     protected float time;
 
-    public static void SetVariables(Animator anim, StateController sc)
+    public static void SetVariables(Animator anim, Camera cam, StateController sc)
     {
         animator = anim;
         stateController = sc;
+        camera = cam;
     }
 
     //inherited classes won't be able to override this method

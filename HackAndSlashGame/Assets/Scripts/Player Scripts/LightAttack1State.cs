@@ -7,13 +7,17 @@ using UnityEngine;
 public class LightAttack1State : BaseAttack
 {
     bool inAnimation = false;
-    LightAttack1SSMBhvr SSMBehavior = animator.GetBehaviour<LightAttack1SSMBhvr>();
-    LightAttack1StateBhvr attackBehaviour = animator.GetBehaviour<LightAttack1StateBhvr>();
-    LightAttack1FinisherBhvr finisherBehaviour = animator.GetBehaviour<LightAttack1FinisherBhvr>();
+    LightAttack1SSMBhvr SSMBehavior;
+    LightAttack1StateBhvr attackBehaviour;
+    LightAttack1FinisherBhvr finisherBehaviour;
 
     public override void OnEnter()
     {
         Debug.Log("Enter LightAttack1");
+        SSMBehavior = animator.GetBehaviour<LightAttack1SSMBhvr>();
+        attackBehaviour = animator.GetBehaviour<LightAttack1StateBhvr>();
+        finisherBehaviour = animator.GetBehaviour<LightAttack1FinisherBhvr>();
+
         base.OnEnter();
         animator.SetTrigger("attack1Trig");
     }
@@ -30,7 +34,7 @@ public class LightAttack1State : BaseAttack
         {
             base.OnUpdate();
 
-            if (shouldCombo)
+            if (shouldCombo && attackBehaviour.inUpdate)
             {
                 stateController.ChangeState(new LightAttack2State());
             }
