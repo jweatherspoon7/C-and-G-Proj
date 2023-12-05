@@ -18,6 +18,10 @@ public class IdleState : State
 
     public override void OnUpdate() 
     {
+        float vertInput = Input.GetAxisRaw("Vertical");
+        float horizInput = Input.GetAxisRaw("Horizontal");
+        Vector3 inputMag = new Vector3(vertInput, 0, horizInput).normalized;
+
         if (behavior.inUpdate)
         {
             if(Input.GetMouseButtonDown(0))
@@ -25,7 +29,7 @@ public class IdleState : State
                 stateController.ChangeState(new LightAttack1State());
             }
 
-            if(Mathf.Abs(Input.GetAxis("Horizontal")) > 0.01 || Mathf.Abs(Input.GetAxis("Vertical")) > 0.01)
+            if(inputMag.magnitude >= 0.01)
             {
                 stateController.ChangeState(new WalkState());
             }

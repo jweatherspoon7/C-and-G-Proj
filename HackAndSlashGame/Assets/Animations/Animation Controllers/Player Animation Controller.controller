@@ -155,7 +155,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Attack3Finisher
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1255235372784530936}
@@ -950,7 +950,7 @@ AnimatorState:
   - {fileID: 1550386084773641181}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
+  m_IKOnFeet: 1
   m_WriteDefaultValues: 1
   m_Mirror: 0
   m_SpeedParameterActive: 0
@@ -1043,10 +1043,10 @@ AnimatorStateMachine:
     second:
     - {fileID: -1365187440508343031}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 500, y: 30, z: 0}
-  m_EntryPosition: {x: 240, y: 280, z: 0}
-  m_ExitPosition: {x: 240, y: 10, z: 0}
-  m_ParentStateMachinePosition: {x: 520, y: 140, z: 0}
+  m_AnyStatePosition: {x: 260, y: 330, z: 0}
+  m_EntryPosition: {x: 240, y: 270, z: 0}
+  m_ExitPosition: {x: -30, y: 80, z: 0}
+  m_ParentStateMachinePosition: {x: -30, y: 150, z: 0}
   m_DefaultState: {fileID: -1613049137194521441}
 --- !u!1101 &8227443132767586773
 AnimatorStateTransition:

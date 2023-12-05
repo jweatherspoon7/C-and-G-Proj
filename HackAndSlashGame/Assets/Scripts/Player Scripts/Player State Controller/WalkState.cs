@@ -22,6 +22,7 @@ public class WalkState : State
 
     public override void OnUpdate()
     {
+
         //gets keyboard inputs
         float vertInput = Input.GetAxisRaw("Vertical");
         float horizInput = Input.GetAxisRaw("Horizontal");
@@ -29,7 +30,7 @@ public class WalkState : State
         //gets desired direction of player
         Vector3 direction = new Vector3(vertInput, 0, horizInput).normalized;
 
-        if (direction.magnitude >= 0.01 && (animator.GetCurrentAnimatorStateInfo(0).IsName("Walk") || animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")))
+        if (direction.magnitude >= 0.01)
         {
             //get the desired angle relative to the camera position
             float targetAngle = (Mathf.Atan2(horizInput, vertInput) * Mathf.Rad2Deg) + camTransform.eulerAngles.y;
@@ -47,5 +48,11 @@ public class WalkState : State
         {
             stateController.ChangeState(new IdleState());
         }
+
+    }
+
+    public override void OnExit()
+    {
+        animator.SetBool("isWalking", false);
     }
 }
