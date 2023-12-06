@@ -129,7 +129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.042
+      value: 0.088
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -462,9 +462,6 @@ PrefabInstance:
       addedObject: {fileID: 938592136479293092}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4344344447130390160}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 8788276216900505650}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
       insertIndex: -1
@@ -499,8 +496,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.29844692, y: 1.8537617, z: 0.2331586}
-  m_Center: {x: 0.00014136732, y: 0.87534595, z: 0.043587454}
+  m_Size: {x: 0.29844692, y: 1.8096967, z: 0.2331586}
+  m_Center: {x: 0.00014136732, y: 0.89737844, z: 0.043587454}
 --- !u!54 &938592136479293092
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -528,20 +525,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4344344447130390160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6503425854364303048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5b6d94da1a355b4e9b3371501cc4d00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camTransform: {fileID: 0}
-  turnSmoothTime: 0.1
 --- !u!114 &8788276216900505650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,11 +532,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6503425854364303048}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a90259dea752b1947a1afcd6d9cad878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
   rayCastObjTransforms:
   - {fileID: 6765537808187590605}
   - {fileID: 5344063903900403331}
@@ -572,3 +558,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e17774d89ae13754a9c22330ccec6da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}

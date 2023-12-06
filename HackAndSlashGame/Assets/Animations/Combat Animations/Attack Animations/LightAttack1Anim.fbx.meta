@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: da26b41ceac557b4385d9d41f9681ec6
+guid: 70809e43d62d6c541b1d3e6d49bfec53
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,14 +33,14 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: LightAttack1Start
+      name: LightAttack1
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 0
-      lastFrame: 24
+      firstFrame: 22
+      lastFrame: 39
       wrapMode: 0
       orientationOffsetY: 0
-      level: -0.052
+      level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
@@ -528,23 +528,23 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Attack1Start(Clone)
+    - name: Attack1(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Beta_Surface
-      parentName: Attack1Start(Clone)
+      parentName: Attack1(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Beta_Joints
-      parentName: Attack1Start(Clone)
+      parentName: Attack1(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:Hips
-      parentName: Attack1Start(Clone)
+      parentName: Attack1(Clone)
       position: {x: 0.008561183, y: 1.0719985, z: 0.0070938305}
       rotation: {x: 0.006458368, y: -0.000000024917858, z: -0.0000002530477, w: 0.99997914}
       scale: {x: 1, y: 1.0000004, z: 1}

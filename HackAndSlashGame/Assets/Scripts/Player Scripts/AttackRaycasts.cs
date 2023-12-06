@@ -26,7 +26,7 @@ public class AttackRaycasts : MonoBehaviour
                 RaycastHit[] hitData = Physics.RaycastAll(raycast, raycastDirection.magnitude, layerMask);
                 HandleRaycastHit(hitData, raycastObjTransform);
 
-                Debug.DrawRay(raycastObjTransform.position, raycastDirection, Color.red);
+                Debug.DrawRay(raycastObjTransform.position, raycastDirection, Color.blue);
 
                 lastPositions[i] = raycastObjTransform.position;    
             }
