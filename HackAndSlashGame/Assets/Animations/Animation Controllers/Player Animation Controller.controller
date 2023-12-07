@@ -1018,7 +1018,7 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Combos
+  m_Name: Combo Tree
   m_ChildStates: []
   m_ChildStateMachines:
   - serializedVersion: 1
@@ -1033,15 +1033,15 @@ AnimatorStateMachine:
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: 498686802522970884}
-    second:
-    - {fileID: 1151498679891441127}
   - first: {fileID: -9107293419934111931}
     second:
     - {fileID: -8065274931936295318}
   - first: {fileID: -327976000152859458}
     second:
     - {fileID: -1365187440508343031}
+  - first: {fileID: 498686802522970884}
+    second:
+    - {fileID: 1151498679891441127}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 260, y: 330, z: 0}
   m_EntryPosition: {x: 240, y: 270, z: 0}
