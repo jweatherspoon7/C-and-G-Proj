@@ -21,7 +21,6 @@ public class LightAttack2State : BaseAttack
 
     public override void OnUpdate() 
     {
-        Debug.Log(SSMBehavior.inSubState);
         if(SSMBehavior.inSubState && !inAnimation)
         {
             inAnimation = true;

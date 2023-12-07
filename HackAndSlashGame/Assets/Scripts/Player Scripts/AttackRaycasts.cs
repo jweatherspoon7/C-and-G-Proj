@@ -11,6 +11,9 @@ public class AttackRaycasts : MonoBehaviour
 
     private bool fireRaycasts = false;
 
+    private double damage;
+    private int knockBack;
+
     void FixedUpdate()
     {
         if(fireRaycasts)
@@ -34,8 +37,9 @@ public class AttackRaycasts : MonoBehaviour
     }
 
     //use for animation events to start raycasts on weapons
-    public void StartRaycasts()
+    public void StartRaycasts(int kB)
     {
+        knockBack = kB;
         lastPositions = new Vector3[rayCastObjTransforms.Length];
         for (int i = 0; i < rayCastObjTransforms.Length; i++)
         {
@@ -54,9 +58,18 @@ public class AttackRaycasts : MonoBehaviour
     {
         foreach (RaycastHit hitObj in raycastHitArr)
         {
-            GameObject obj = hitObj.transform.gameObject;
+            GameObject enemy = hitObj.transform.gameObject;
+            Animator enemyAnimator = enemy.GetComponent<Animator>();
 
-            Debug.Log(obj.name + " was hit by " + caster.name);
+            if(!enemyAnimator.GetBool("isDamaged"))
+            {
+                Debug.Log(enemy.name + " was hit by " + caster.name);
+                enemyAnimator.SetBool("isDamaged", true);
+            }
+
+            enemy.GetComponent<Rigidbody>().AddForce(transform.forward * knockBack, ForceMode.Impulse);
+
         }
     }
 }
+

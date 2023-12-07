@@ -12,12 +12,14 @@ public class LightAttack3StateBvhr : StateMachineBehaviour
 
     private AttackRaycasts attackRaycasts;
 
+    private int knockBack = 40;
+
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         inEnter = true;
         attackRaycasts = animator.gameObject.GetComponent<AttackRaycasts>();
-        attackRaycasts.StartRaycasts();
+        attackRaycasts.StartRaycasts(knockBack);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
