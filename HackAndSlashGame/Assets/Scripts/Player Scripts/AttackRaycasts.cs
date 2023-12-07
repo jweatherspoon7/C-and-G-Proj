@@ -34,9 +34,8 @@ public class AttackRaycasts : MonoBehaviour
     }
 
     //use for animation events to start raycasts on weapons
-    public void StartRaycasts(string animName )
+    public void StartRaycasts()
     {
-        Debug.Log(animName + " raycast start");
         lastPositions = new Vector3[rayCastObjTransforms.Length];
         for (int i = 0; i < rayCastObjTransforms.Length; i++)
         {
@@ -46,10 +45,8 @@ public class AttackRaycasts : MonoBehaviour
     }
 
     //use for animation events to end raycasts on weapons
-    public void EndRaycasts(string animName)
+    public void EndRaycasts()
     {
-        Debug.Log(animName + " raycast end");
-
         fireRaycasts = false;
     }
 
