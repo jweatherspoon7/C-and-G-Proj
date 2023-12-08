@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 99689611}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -415,7 +415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433186917}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.009597877, y: -5.3767457e-10, z: 5.1607724e-12, w: 0.9999539}
+  m_LocalRotation: {x: 0.00959787, y: 0.00000002566799, z: -2.463694e-10, w: 0.999954}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -852,7 +852,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04326276, y: -0.0015234859, z: 0.000065972046, w: 0.9990626}
+  m_LocalRotation: {x: 0.043262724, y: -0.0015234855, z: 0.00006597198, w: 0.9990626}
   m_LocalPosition: {x: -1.1943045, y: 0.4428048, z: -7.723664}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -982,8 +982,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142703436}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.064443804, y: -0, z: -0, w: 0.99792135}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.24108729, y: -0.00000002981341, z: 0.0000000074060877, w: 0.97050345}
+  m_LocalPosition: {x: 0, y: 1.7133379, z: 2.9935088}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1613,7 +1613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128800650}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.043262757, y: -0.0015234855, z: 0.00006597203, w: 0.9990626}
+  m_LocalRotation: {x: 0.043262724, y: -0.0015234855, z: 0.000065971966, w: 0.9990626}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

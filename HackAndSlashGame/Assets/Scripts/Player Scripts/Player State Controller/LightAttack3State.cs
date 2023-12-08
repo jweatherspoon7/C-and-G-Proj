@@ -16,8 +16,7 @@ public class LightAttack3State : BaseAttack
         attackBehaviour = animator.GetBehaviour<LightAttack3StateBvhr>();
 
         base.OnEnter();
-        animator.SetBool("nextAttack", true);
-        animator.SetTrigger("attack3Trig");
+        animator.SetBool("attack3Bool", true);
     }
 
     public override void OnUpdate()
@@ -36,7 +35,7 @@ public class LightAttack3State : BaseAttack
     public override void OnExit()
     {
         Debug.Log("End LightAttack3");
-        animator.SetBool("nextAttack", false);
+        animator.SetBool("attack3Bool", false);
         base.OnExit();
     }
 }

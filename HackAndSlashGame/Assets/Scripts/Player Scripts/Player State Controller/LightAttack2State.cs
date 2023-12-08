@@ -15,39 +15,33 @@ public class LightAttack2State : BaseAttack
         SSMBehavior = animator.GetBehaviour<LightAttack2SSMBhvr>();
 
         base.OnEnter();
-        animator.SetBool("nextAttack",true);
-        animator.SetTrigger("attack2Trig");
+        animator.SetBool("attack2Bool", true);
     }
 
     public override void OnUpdate() 
     {
-        if(SSMBehavior.inSubState && !inAnimation)
+        if (SSMBehavior.inSubState)
         {
             inAnimation = true;
-            animator.SetBool("nextAttack", false);
-        }
-        
-        if(inAnimation)
-        {
             base.OnUpdate();
 
-            if (shouldCombo)
+            if (attackBehaviour.inEnter && shouldCombo)
             {
-                stateController.ChangeState(new LightAttack3State());
+                stateController.ChangeState(new LightAttack2State());
             }
+        }
 
-            if (!SSMBehavior.inSubState && !shouldCombo)
-            {
-                stateController.ChangeState(new IdleState());
-            }
+        if (inAnimation && !SSMBehavior.inSubState)
+        {
+            stateController.ChangeState(new IdleState());
         }
     }
 
     public override void OnExit() 
     {
+        animator.SetBool("attack2Bool", false);
         if (!shouldCombo)
         {
-            animator.SetBool("nextAttack", false);
             base.OnExit();
         }
     }

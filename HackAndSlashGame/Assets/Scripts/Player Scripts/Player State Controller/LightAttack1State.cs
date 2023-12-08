@@ -6,7 +6,8 @@ using UnityEngine;
 //class to represent Attack1 substatemachine
 public class LightAttack1State : BaseAttack
 {
-    bool inAnimation = false;
+    bool inAttack = false;
+    bool inFinisher = false;
     LightAttack1SSMBhvr SSMBehavior;
     LightAttack1StateBhvr attackBehaviour;
     LightAttack1FinisherBhvr finisherBehaviour;
@@ -19,39 +20,37 @@ public class LightAttack1State : BaseAttack
         finisherBehaviour = animator.GetBehaviour<LightAttack1FinisherBhvr>();
 
         base.OnEnter();
-        animator.SetTrigger("attack1Trig");
+        animator.SetBool("attack1Bool", true);
     }
 
     public override void OnUpdate()
     {
-        if (SSMBehavior.inSubState && !inAnimation)
+        if (SSMBehavior.inSubState)
         {
-            Debug.Log("Attack1 Update");
-            inAnimation = true;
-        }
-
-        if(inAnimation)
-        {
+            inAttack = true;
             base.OnUpdate();
 
-            if (shouldCombo && attackBehaviour.inUpdate)
+            if((attackBehaviour.inEnter || finisherBehaviour.inEnter) && shouldCombo)
             {
                 stateController.ChangeState(new LightAttack2State());
             }
+        }
 
-            if (!SSMBehavior.inSubState && !shouldCombo)
-            {
-                stateController.ChangeState(new IdleState());
-            }
+        if(inAttack && !SSMBehavior.inSubState)
+        {
+            stateController.ChangeState(new IdleState());
         }
     }
 
     public override void OnExit() 
     {
         Debug.Log("End LightAttack1");
-        if(!shouldCombo)
+        animator.SetBool("attack1Bool", false);
+        finisherBehaviour.inExit = false;
+        if (!shouldCombo)
         {
             base.OnExit();
         }
+
     }
 }

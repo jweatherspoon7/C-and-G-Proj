@@ -10,6 +10,9 @@ public class LightAttack1FinisherBhvr : StateMachineBehaviour
     [HideInInspector]
     public bool inUpdate = false;
 
+    [HideInInspector]
+    public bool inExit = false;
+
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -27,5 +30,6 @@ public class LightAttack1FinisherBhvr : StateMachineBehaviour
     {
         inEnter = false;
         inUpdate = false;
+        inExit = true;
     }
 }
