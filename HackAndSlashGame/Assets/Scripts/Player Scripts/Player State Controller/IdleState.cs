@@ -28,8 +28,7 @@ public class IdleState : State
             {
                 stateController.ChangeState(new LightAttack1State());
             }
-
-            if(inputMag.magnitude >= 0.01)
+            else if(inputMag.magnitude >= 0.01)
             {
                 stateController.ChangeState(new WalkState());
             }

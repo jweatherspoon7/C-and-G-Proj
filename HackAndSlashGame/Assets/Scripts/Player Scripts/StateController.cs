@@ -33,4 +33,6 @@ public class StateController : MonoBehaviour
         currentState = newState;
         currentState.OnStateEnter();
     }
+
+    public State GetCurrentState() { return currentState; }
 }

@@ -27,7 +27,7 @@ public class LightAttack2State : BaseAttack
 
             if (attackBehaviour.inEnter && shouldCombo)
             {
-                stateController.ChangeState(new LightAttack2State());
+                stateController.ChangeState(new LightAttack3State());
             }
         }
 
