@@ -7,7 +7,6 @@ using UnityEngine;
 public class LightAttack1State : BaseAttack
 {
     bool inAttack = false;
-    bool inFinisher = false;
     LightAttack1SSMBhvr SSMBehavior;
     LightAttack1StateBhvr attackBehaviour;
     LightAttack1FinisherBhvr finisherBehaviour;
