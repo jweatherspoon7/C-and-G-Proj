@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class WalkState : State
 {
     private float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
     private Transform transform;
     private Transform camTransform;
+    private WalkStateBhvr behaviour;
 
     public override void OnEnter()
     {
         Debug.Log("Walk");
         camTransform = camera.transform;
         transform = animator.transform;
+        behaviour = animator.GetBehaviour<WalkStateBhvr>();
 
         animator.SetBool("canMove", true);
         animator.SetBool("isAttacking", false);
@@ -22,33 +23,31 @@ public class WalkState : State
 
     public override void OnUpdate()
     {
-
-        //gets keyboard inputs
-        float vertInput = Input.GetAxisRaw("Vertical");
-        float horizInput = Input.GetAxisRaw("Horizontal");
-
-        //gets desired direction of player
-        Vector3 direction = new Vector3(vertInput, 0, horizInput).normalized;
-
-        if (direction.magnitude >= 0.01)
+        if (behaviour.inUpdate)
         {
-            //get the desired angle relative to the camera position
-            float targetAngle = (Mathf.Atan2(horizInput, vertInput) * Mathf.Rad2Deg) + camTransform.eulerAngles.y;
+            //gets keyboard inputs
+            float vertInput = Input.GetAxisRaw("Vertical");
+            float horizInput = Input.GetAxisRaw("Horizontal");
 
-            //Smooths the player angle over time. 
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            //gets desired direction of player
+            Vector3 direction = new Vector3(vertInput, 0, horizInput).normalized;
 
-            //set player rotation
-            transform.rotation = Quaternion.Euler(0, angle, 0);
+            if (direction.magnitude >= 0.01)
+            {
+                //get the desired angle relative to the camera position
+                float targetAngle = (Mathf.Atan2(horizInput, vertInput) * Mathf.Rad2Deg) + camTransform.eulerAngles.y;
 
-            animator.SetBool("isWalking", true);
-            //transform.Translate(Vector3.forward * speed * Time.deltaTime); only use when moving by position
+                //Smooths the player angle over time. 
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+
+                //set player rotation
+                transform.rotation = Quaternion.Euler(0, angle, 0);
+            }
+            else
+            {
+                stateController.ChangeState(new IdleState());
+            }
         }
-        else
-        {
-            stateController.ChangeState(new IdleState());
-        }
-
     }
 
     public override void OnExit()

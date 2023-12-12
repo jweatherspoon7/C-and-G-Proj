@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class IdleState : State
 {
-    private double timeOnDown;
     private IdleStateBehavior behavior;
 
     //use override keyword to override methods of base class
@@ -13,6 +12,7 @@ public class IdleState : State
         Debug.Log("Idle");
         animator.SetBool("canMove", true);
         animator.SetBool("isAttacking", false);
+        animator.SetBool("isWalking", false);
         behavior = animator.GetBehaviour<IdleStateBehavior>();
     }
 
@@ -28,7 +28,8 @@ public class IdleState : State
             {
                 stateController.ChangeState(new LightAttack1State());
             }
-            else if(inputMag.magnitude >= 0.01)
+            
+            if(inputMag.magnitude >= 0.01)
             {
                 stateController.ChangeState(new WalkState());
             }
