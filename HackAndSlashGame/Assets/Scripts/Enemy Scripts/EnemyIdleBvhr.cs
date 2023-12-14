@@ -9,11 +9,11 @@ public class EnemyIdleBvhr : StateMachineBehaviour
     Vector3 initPosition;
     private float turnSmoothTime = 0.5f;
     private float turnSmoothVelocity;
-    private bool inCooldown = false;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        animator.SetBool("isWalking", false);
         playerTargeting = animator.gameObject.GetComponent<PlayerTargeting>();
         enemy = animator.gameObject;
 
@@ -34,9 +34,10 @@ public class EnemyIdleBvhr : StateMachineBehaviour
         enemy.transform.rotation = Quaternion.Euler(0, angle, 0);
 
 
-        if (playerRay.magnitude > 5 || (playerRay.magnitude <= 5 && !inCooldown))
+        if (playerRay.magnitude > 5)
         {
             //Walk to player if they are far away
+            animator.SetInteger("yDirectionBlend", 1);
             animator.SetBool("isWalking", true);
         }
         else 

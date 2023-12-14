@@ -19,16 +19,26 @@ public class EnemyWalkBvhr : StateMachineBehaviour
     {
         Vector3 playerRay = playerTargeting.GetPlayerRay();
 
+        if (!animator.GetBool("onCooldown"))
+        {
+            if(playerRay.magnitude <= 1)
+            {
+                animator.SetTrigger("attack1Trig");
+            }
+        }
+        else
+        {
+            if(playerRay.magnitude <= 5)
+            {
+                animator.SetBool("isWalking", false);
+            }
+        }
+
         Quaternion lookAtRotation = Quaternion.LookRotation(playerRay.normalized);
         lookAtRotation.x = 0;
         lookAtRotation.z = 0;
 
         transform.rotation = lookAtRotation;
-
-        if (playerRay.magnitude <= 5)
-        {
-            animator.SetBool("isWalking", false);
-        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
