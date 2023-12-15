@@ -58,16 +58,13 @@ public class AttackRaycasts : MonoBehaviour
     {
         foreach (RaycastHit hitObj in raycastHitArr)
         {
-            GameObject enemy = hitObj.transform.gameObject;
-            Animator enemyAnimator = enemy.GetComponent<Animator>();
+            GameObject obj = hitObj.transform.gameObject;
+            Animator objAnimator = obj.GetComponent<Animator>();
 
-            if(!enemyAnimator.GetBool("isDamaged"))
-            {
-                Debug.Log(enemy.name + " was hit by " + caster.name);
-                enemyAnimator.SetBool("isDamaged", true);
-            }
+            Debug.Log(obj.name + " was hit by " + caster.name);
+            objAnimator.SetTrigger("damageTrig");
 
-            enemy.GetComponent<Rigidbody>().AddForce(transform.forward * knockBack, ForceMode.Impulse);
+            obj.GetComponent<Rigidbody>().AddForce(transform.forward * knockBack, ForceMode.Impulse);
 
         }
     }

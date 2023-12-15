@@ -6,16 +6,27 @@ public class LightAttack1SSMBhvr : StateMachineBehaviour
 {
     [HideInInspector]
     public bool inSubState = false;
+    PlayerTargeting enemyTarget;
 
      override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
      {
-        Debug.Log("Enter Attack1 Anim");
         inSubState = true;
+
+        if (animator.gameObject.tag.Equals("Enemy"))
+        {
+            enemyTarget = animator.gameObject.GetComponent<PlayerTargeting>();
+            enemyTarget.SetCanRotate(false);
+        }
      }
     
     override public void OnStateMachineExit(Animator animator, int stateMachinePathHash)
     {
-        Debug.Log("End Attack1 Anim");
+        if (animator.gameObject.tag.Equals("Enemy"))
+        {
+            enemyTarget.SetCanRotate(true);
+            animator.SetBool("onCooldown", true);
+        }
+
         inSubState = false;
     }
 }
