@@ -26,7 +26,8 @@ public class PlayerTargeting : MonoBehaviour
         //move later
         if(startCooldown)
         {
-            StartCoroutine(CooldownTime());
+            StartCoroutine(CooldownTime(3.0f));
+            startCooldown = false;
         }
 
         //find a the player position from the enemy
@@ -49,12 +50,13 @@ public class PlayerTargeting : MonoBehaviour
 
     public void SetCanRotate(bool cR) {  canRotate = cR; }
 
-    public void StartCooldown() { startCooldown = true; }
+    public void StartCooldown() { StartCoroutine(CooldownTime(3.0f)); }
 
     //move later
-    IEnumerator CooldownTime()
+    IEnumerator CooldownTime(float time)
     {
-        yield return new WaitForSeconds(Random.Range(2, 3));
+        yield return new WaitForSeconds(time);
+
         animator.SetBool("onCooldown", false);
         startCooldown = false;
     }

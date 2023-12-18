@@ -34,5 +34,21 @@ public class StateController : MonoBehaviour
         currentState.OnStateEnter();
     }
 
+    //add damage knockback other effects in param
+    public void RegisterHit(GameObject enemy)
+    {
+        Vector3 directionToTarget = transform.position - enemy.transform.position;
+        float angle = Vector3.Angle(transform.forward, directionToTarget);
+
+        if(Mathf.Abs(angle) < 90 && anim.GetBehaviour<ParryStateBvhr>().inSubState)
+        {
+            //impact
+        }
+        else
+        {
+            anim.SetTrigger("damageTrig");
+        }
+    }
+
     public State GetCurrentState() { return currentState; }
 }

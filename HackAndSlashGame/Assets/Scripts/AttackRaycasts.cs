@@ -62,7 +62,15 @@ public class AttackRaycasts : MonoBehaviour
             Animator objAnimator = obj.GetComponent<Animator>();
 
             Debug.Log(obj.name + " was hit by " + caster.name);
-            objAnimator.SetTrigger("damageTrig");
+
+            if (CompareTag("Player"))
+            {
+                GetComponent<StateController>().RegisterHit(gameObject);
+            }
+            else
+            {
+                objAnimator.SetTrigger("damageTrig");
+            }
 
             obj.GetComponent<Rigidbody>().AddForce(transform.forward * knockBack, ForceMode.Impulse);
 

@@ -24,7 +24,6 @@ public class EnemyMovementBvhr : StateMachineBehaviour
 
         if (onCooldown)
         {
-            playerTargeting.StartCooldown();
             if(playerRay.magnitude <= 5 && !hasBackedup)
             {
                 animator.SetFloat("movementBlend", -1);
@@ -39,9 +38,10 @@ public class EnemyMovementBvhr : StateMachineBehaviour
                 animator.SetFloat("movementBlend", 0);
             }
         }
-        else
+        
+        if(!onCooldown)
         {
-            if(playerRay.magnitude > 1.5)
+            if(playerRay.magnitude > 1)
             {
                 animator.SetFloat("movementBlend", 1);
             }

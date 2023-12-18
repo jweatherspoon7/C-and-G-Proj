@@ -13,6 +13,9 @@ public class IdleState : State
         animator.SetBool("canMove", true);
         animator.SetBool("isAttacking", false);
         animator.SetBool("isWalking", false);
+        animator.SetBool("attack1Bool", false);
+        animator.SetBool("attack2Bool", false);
+        animator.SetBool("attack3Bool", false);
         behavior = animator.GetBehaviour<IdleStateBehavior>();
     }
 
@@ -28,8 +31,12 @@ public class IdleState : State
             {
                 stateController.ChangeState(new LightAttack1State());
             }
-            
-            if(inputMag.magnitude >= 0.01)
+            else if(Input.GetMouseButtonDown(1))
+            {
+                //get parry state
+                stateController.ChangeState(new ParryState());
+            }
+            else if(inputMag.magnitude >= 0.01)
             {
                 stateController.ChangeState(new WalkState());
             }

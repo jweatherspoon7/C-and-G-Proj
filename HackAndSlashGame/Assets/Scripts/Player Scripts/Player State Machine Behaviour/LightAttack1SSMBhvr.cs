@@ -25,6 +25,7 @@ public class LightAttack1SSMBhvr : StateMachineBehaviour
         {
             enemyTarget.SetCanRotate(true);
             animator.SetBool("onCooldown", true);
+            enemyTarget.StartCooldown();
         }
 
         inSubState = false;
