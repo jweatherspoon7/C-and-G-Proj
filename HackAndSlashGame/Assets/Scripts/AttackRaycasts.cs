@@ -27,7 +27,11 @@ public class AttackRaycasts : MonoBehaviour
                 Ray raycast = new Ray(raycastObjTransform.position, raycastDirection.normalized);
 
                 RaycastHit[] hitData = Physics.RaycastAll(raycast, raycastDirection.magnitude, layerMask);
-                HandleRaycastHit(hitData, raycastObjTransform);
+
+                if(hitData.Length > 0 ) 
+                {
+                    HandleRaycastHit(hitData, raycastObjTransform);
+                }
 
                 Debug.DrawRay(raycastObjTransform.position, raycastDirection, Color.blue);
 
@@ -61,11 +65,9 @@ public class AttackRaycasts : MonoBehaviour
             GameObject obj = hitObj.transform.gameObject;
             Animator objAnimator = obj.GetComponent<Animator>();
 
-            Debug.Log(obj.name + " was hit by " + caster.name);
-
-            if (CompareTag("Player"))
+            if (obj.tag.Equals("Player"))
             {
-                GetComponent<StateController>().RegisterHit(gameObject);
+                obj.GetComponent<StateController>().RegisterHit(transform);
             }
             else
             {

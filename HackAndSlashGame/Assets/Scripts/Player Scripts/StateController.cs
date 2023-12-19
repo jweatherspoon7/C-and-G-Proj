@@ -35,17 +35,19 @@ public class StateController : MonoBehaviour
     }
 
     //add damage knockback other effects in param
-    public void RegisterHit(GameObject enemy)
+    public void RegisterHit(Transform enemy)
     {
-        Vector3 directionToTarget = transform.position - enemy.transform.position;
+        Vector3 directionToTarget = transform.position - enemy.position;
         float angle = Vector3.Angle(transform.forward, directionToTarget);
 
-        if(Mathf.Abs(angle) < 90 && anim.GetBehaviour<ParryStateBvhr>().inSubState)
+        if(Mathf.Abs(angle) > 90 && anim.GetBehaviour<ParryStateBvhr>().inSubState)
         {
             //impact
+            Debug.Log("Parried attack");
         }
         else
         {
+            Debug.Log("Player was hit");
             anim.SetTrigger("damageTrig");
         }
     }
