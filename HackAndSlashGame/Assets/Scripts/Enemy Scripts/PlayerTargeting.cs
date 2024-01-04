@@ -9,7 +9,7 @@ public class PlayerTargeting : MonoBehaviour
     private bool canRotate;
     private bool startCooldown;
 
-    private float turnSmoothTime = 0.5f;
+    private float turnSmoothTime = 0.05f;
     private float turnSmoothVelocity;
 
     private Animator animator;
