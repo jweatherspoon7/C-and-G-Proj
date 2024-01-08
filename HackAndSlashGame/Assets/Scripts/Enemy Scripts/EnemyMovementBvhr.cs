@@ -28,7 +28,7 @@ public class EnemyMovementBvhr : StateMachineBehaviour
             {
                 animator.SetFloat("movementBlend", -1);
             }
-            else if(playerRay.magnitude > 5.5)
+            else if(playerRay.magnitude > 3)
             {
                 animator.SetFloat("movementBlend", 1);
             }

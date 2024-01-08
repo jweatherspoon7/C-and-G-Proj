@@ -44,7 +44,7 @@ public class AttackRaycasts : MonoBehaviour
     //use for animation events to start raycasts on weapons
     public void StartRaycasts(int kB)
     {
-        knockBack = kB;
+        knockBack = 0;
         lastPositions = new Vector3[rayCastObjTransforms.Length];
         for (int i = 0; i < rayCastObjTransforms.Length; i++)
         {

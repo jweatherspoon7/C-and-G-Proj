@@ -21,25 +21,13 @@ public class IdleState : State
 
     public override void OnUpdate() 
     {
-        float vertInput = Input.GetAxisRaw("Vertical");
-        float horizInput = Input.GetAxisRaw("Horizontal");
-        Vector3 inputMag = new Vector3(vertInput, 0, horizInput).normalized;
+        nextState = ListenForAttackInputs();
+        if(nextState == null) nextState = ListenForMovement();
 
         if (behavior.inUpdate)
         {
-            if(Input.GetMouseButtonDown(0))
-            {
-                stateController.ChangeState(new LightAttack1State());
-            }
-            else if(Input.GetMouseButtonDown(1))
-            {
-                //get parry state
-                stateController.ChangeState(new ParryState());
-            }
-            else if(inputMag.magnitude >= 0.01)
-            {
-                stateController.ChangeState(new WalkState());
-            }
+            Debug.Log("idle");
+            stateController.ChangeState(nextState);
         }
     }
 }

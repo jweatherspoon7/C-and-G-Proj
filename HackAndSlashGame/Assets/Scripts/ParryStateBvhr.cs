@@ -6,13 +6,14 @@ public class ParryStateBvhr : StateMachineBehaviour
 {
     [HideInInspector]
     public bool inSubState = false;
+    State nextState = new IdleState();
 
-    override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         inSubState = true;
     }
 
-    override public void OnStateMachineExit(Animator animator, int stateMachinePathHash)
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (animator.CompareTag("Player"))
         {
@@ -20,4 +21,6 @@ public class ParryStateBvhr : StateMachineBehaviour
         }
         inSubState = false;
     }
+
+    public void SetNextState(State state) { if(state != null) nextState = state; }
 }

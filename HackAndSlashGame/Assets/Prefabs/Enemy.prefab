@@ -289,6 +289,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c843ace6e9e8e534892cfe8fa5941e24, type: 2}
@@ -439,8 +443,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.24330045, y: 0.40247834, z: 0.24120113}
-  m_Center: {x: -0.0026610715, y: 0.19715221, z: 0.037341315}
+  m_Size: {x: 0.24330045, y: 0.40247834, z: 0.3801939}
+  m_Center: {x: -0.0026610717, y: 0.19715221, z: -0.032155287}
 --- !u!1 &1544262218164268839 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
@@ -488,6 +492,9 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
+  weaponLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   rayCastObjTransforms:
   - {fileID: 8909276853883017278}
   - {fileID: 5490947566979207013}

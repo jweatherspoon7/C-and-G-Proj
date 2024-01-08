@@ -25,6 +25,8 @@ public class StateController : MonoBehaviour
 
     public void ChangeState(State newState)
     {
+        if(newState == null) { return; }
+
         if (currentState != null)
         {
             currentState.OnStateExit();
