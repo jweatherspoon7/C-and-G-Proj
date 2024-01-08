@@ -16,9 +16,12 @@ public class LightAttack1SSMBhvr : StateMachineBehaviour
         {
             enemyTarget = animator.gameObject.GetComponent<PlayerTargeting>();
             enemyTarget.SetCanRotate(false);
+
+            animator.SetInteger("AttackInt", 2);
+
         }
-     }
-    
+    }
+
     override public void OnStateMachineExit(Animator animator, int stateMachinePathHash)
     {
         if (animator.gameObject.tag.Equals("Enemy"))

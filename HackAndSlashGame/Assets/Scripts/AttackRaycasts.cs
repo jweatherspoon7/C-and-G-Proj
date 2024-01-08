@@ -15,6 +15,9 @@ public class AttackRaycasts : MonoBehaviour
     private double damage;
     private int knockBack;
 
+    //Keeps track of objects hit to make sure they are not hit multiple times in one attack
+    private List<int> hitList = new List<int>();
+
     void FixedUpdate()
     {
         if(fireRaycasts)
@@ -57,6 +60,7 @@ public class AttackRaycasts : MonoBehaviour
     public void EndRaycasts()
     {
         fireRaycasts = false;
+        hitList.Clear();
     }
 
     private void HandleRaycastHit(RaycastHit[] raycastHitArr, Transform caster)
@@ -65,6 +69,14 @@ public class AttackRaycasts : MonoBehaviour
         {
             GameObject obj = hitObj.transform.gameObject;
             Animator objAnimator = obj.GetComponent<Animator>();
+
+            foreach (int hash in hitList)
+            {
+                if(obj.GetHashCode() == hash)
+                {
+                    //skip loop
+                }
+            }
 
             if (obj.tag.Equals("Player"))
             {

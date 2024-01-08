@@ -33,6 +33,7 @@ public class DamageStateBhvr : StateMachineBehaviour
         else if (gameObject.CompareTag("Enemy"))
         {
             animator.ResetTrigger("attack1Trig");
+            animator.SetBool("OnCooldown", true);
         }
     }
 }

@@ -47,7 +47,7 @@ public class EnemyMovementBvhr : StateMachineBehaviour
             }
             else
             {
-                animator.SetTrigger("attack1Trig");
+                animator.SetInteger("AttackInt", 1);
             }
         }
     }
