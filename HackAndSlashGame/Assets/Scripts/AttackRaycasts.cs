@@ -6,7 +6,6 @@ using UnityEngine;
 public class AttackRaycasts : MonoBehaviour
 {
     public LayerMask layerMask;
-    public LayerMask weaponLayerMask;
     public Transform[] rayCastObjTransforms;
     private Vector3[] lastPositions;
 
@@ -30,7 +29,7 @@ public class AttackRaycasts : MonoBehaviour
 
                 Ray raycast = new Ray(raycastObjTransform.position, raycastDirection.normalized);
 
-                RaycastHit[] hitData = Physics.RaycastAll(raycast, raycastDirection.magnitude, layerMask|weaponLayerMask);
+                RaycastHit[] hitData = Physics.RaycastAll(raycast, raycastDirection.magnitude, layerMask);
 
                 if(hitData.Length > 0) 
                 {
@@ -67,6 +66,8 @@ public class AttackRaycasts : MonoBehaviour
     {
         foreach (RaycastHit hitObj in raycastHitArr)
         {
+            bool inHitList = false;
+
             GameObject obj = hitObj.transform.gameObject;
             Animator objAnimator = obj.GetComponent<Animator>();
 
@@ -74,17 +75,18 @@ public class AttackRaycasts : MonoBehaviour
             {
                 if(obj.GetHashCode() == hash)
                 {
-                    //skip loop
+                    inHitList = true;
+                    break;
                 }
             }
+
+            if (inHitList) continue;
+            else hitList.Add(obj.GetHashCode());
+
 
             if (obj.tag.Equals("Player"))
             {
                 obj.GetComponent<StateController>().RegisterHit(transform);
-            }
-            else if (obj.tag.Equals("Weapon"))
-            {
-                Debug.Log("hit weapon");
             }
             else
             {

@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class EnemyMovementBvhr : StateMachineBehaviour
 {
-    PlayerTargeting playerTargeting;
-    bool onCooldown;
+    private PlayerTargeting playerTargeting;
 
     //use to keep enemy from running from the player
-    bool hasBackedup = false;
+    private bool hasBackedup = false;
+
+    //for smooth damp on movement
+    private float smoothTime = 0.05f;
+    private float smoothVelocity;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -20,36 +23,37 @@ public class EnemyMovementBvhr : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Vector3 playerRay = playerTargeting.GetPlayerRay();
-        onCooldown = animator.GetBool("onCooldown");
+        int movementTarget = 0;
 
-        if (onCooldown)
+        if (animator.GetBool("onCooldown"))
         {
-            if(playerRay.magnitude <= 5 && !hasBackedup)
+            if(!(playerRay.magnitude >= 2 && playerRay.magnitude <= 3) && !hasBackedup)
             {
-                animator.SetFloat("movementBlend", -1);
+                movementTarget = -1;
             }
-            else if(playerRay.magnitude > 3)
+            else if(playerRay.magnitude > 3.5f)
             {
-                animator.SetFloat("movementBlend", 1);
+                movementTarget = 1;
             }
             else
             {
                 hasBackedup = true;
-                animator.SetFloat("movementBlend", 0);
             }
         }
-        
-        if(!onCooldown)
+        else
         {
-            if(playerRay.magnitude > 1.2)
+            if(playerRay.magnitude > 1.1)
             {
-                animator.SetFloat("movementBlend", 1);
+                movementTarget = 1;
             }
             else
             {
                 animator.SetInteger("AttackInt", 1);
             }
         }
+
+        float movementBlend = Mathf.SmoothDamp(animator.GetFloat("movementBlend"), movementTarget, ref smoothVelocity, smoothTime);
+        animator.SetFloat("movementBlend", movementBlend);
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

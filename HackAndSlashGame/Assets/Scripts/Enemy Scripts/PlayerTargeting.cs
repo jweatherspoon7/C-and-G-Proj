@@ -50,7 +50,7 @@ public class PlayerTargeting : MonoBehaviour
 
     public void SetCanRotate(bool cR) {  canRotate = cR; }
 
-    public void StartCooldown() { StartCoroutine(CooldownTime(2.0f)); }
+    public void StartCooldown(float time) { StartCoroutine(CooldownTime(time)); }
 
     //move later
     IEnumerator CooldownTime(float time)

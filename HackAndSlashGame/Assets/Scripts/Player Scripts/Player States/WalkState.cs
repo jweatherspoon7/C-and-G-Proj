@@ -11,7 +11,6 @@ public class WalkState : State
 
     public override void OnEnter()
     {
-        Debug.Log("Walk");
         camTransform = camera.transform;
         transform = animator.transform;
         behaviour = animator.GetBehaviour<WalkStateBhvr>();

@@ -5,6 +5,7 @@ using UnityEngine;
 public class DamageStateBhvr : StateMachineBehaviour
 {
     GameObject gameObject;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -32,8 +33,11 @@ public class DamageStateBhvr : StateMachineBehaviour
         }
         else if (gameObject.CompareTag("Enemy"))
         {
-            animator.ResetTrigger("attack1Trig");
-            animator.SetBool("OnCooldown", true);
+            animator.SetInteger("AttackInt",0);
+            animator.SetBool("onCooldown", true);
+
+            PlayerTargeting enemyTarget = animator.gameObject.GetComponent<PlayerTargeting>();
+            enemyTarget.StartCooldown(Random.Range(0,1));
         }
     }
 }

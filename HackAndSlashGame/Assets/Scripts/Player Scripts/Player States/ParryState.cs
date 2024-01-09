@@ -7,7 +7,6 @@ public class ParryState : State
     ParryStateBvhr behaviour = animator.GetBehaviour<ParryStateBvhr>();
     public override void OnEnter()
     {
-        Debug.Log("Parry");
         animator.SetTrigger("parryTrig");
     }
 

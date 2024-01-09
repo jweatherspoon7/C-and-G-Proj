@@ -9,7 +9,6 @@ public class IdleState : State
     //use override keyword to override methods of base class
     public override void OnEnter()
     {
-        Debug.Log("Idle");
         animator.SetBool("canMove", true);
         animator.SetBool("isAttacking", false);
         animator.SetBool("isWalking", false);
@@ -26,7 +25,6 @@ public class IdleState : State
 
         if (behavior.inUpdate)
         {
-            Debug.Log("idle");
             stateController.ChangeState(nextState);
         }
     }

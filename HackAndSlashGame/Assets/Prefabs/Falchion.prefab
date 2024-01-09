@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 1409130728018269441}
   - component: {fileID: 3192008867897467307}
   - component: {fileID: 2371088392857919636}
-  - component: {fileID: -3704186588672871497}
   m_Layer: 0
   m_Name: Falchion
   m_TagString: Weapon
@@ -60,7 +59,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000018099952, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0.024, y: 0, z: -0.092}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2012334743087498793}
@@ -121,27 +120,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-3704186588672871497
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3318293791332712804}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.050266452, y: 1.3566304, z: 0.16456108}
-  m_Center: {x: 0, y: -0.5010975, z: 0.0000003799796}
 --- !u!1 &3693150842648694087
 GameObject:
   m_ObjectHideFlags: 0

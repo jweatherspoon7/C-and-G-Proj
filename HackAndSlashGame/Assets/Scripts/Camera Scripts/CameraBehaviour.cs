@@ -26,6 +26,10 @@ public class CameraBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //hide and lock cursor
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         animator = GetComponent<Animator>();
         playerTarget = new CinemachineTargetGroup.Target { target = transform, radius = playerRadius, weight = playerWeight};
     }

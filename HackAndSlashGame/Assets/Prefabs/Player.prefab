@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1308223573287545797}
   - component: {fileID: 1165308972320902751}
   - component: {fileID: 7928642664531570369}
+  - component: {fileID: 6237024490689064518}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -35,7 +36,6 @@ Transform:
   m_Children:
   - {fileID: 4480108354036734047}
   - {fileID: 7776792385808468562}
-  - {fileID: 4364993909603010865}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2975330651895098498
@@ -114,9 +114,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
-  weaponLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
   rayCastObjTransforms:
   - {fileID: 8930651592594172911}
   - {fileID: 5505602091424677044}
@@ -124,6 +121,28 @@ MonoBehaviour:
   - {fileID: 7999462461116583523}
   - {fileID: 1301138828390410897}
   - {fileID: 3513239875965967736}
+--- !u!114 &6237024490689064518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405451758248046434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96883c7b00c102d47af43adee8330efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  cmLockonGroup: {fileID: 0}
+  locateRadius: 20
+  playerRadius: 8
+  playerWeight: 1
+  targetRadius: 0
+  targetWeight: 2
+  targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &3851520167253340952
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,37 +196,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3287675, y: 1.5517929, z: 0.8339453}
   m_Center: {x: -0.009837449, y: 0.8553735, z: -0.01045835}
---- !u!1 &9012827141872825028
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4364993909603010865}
-  m_Layer: 0
-  m_Name: Lock-on Cam Follow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4364993909603010865
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9012827141872825028}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7942001345622896041}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6925748461034958278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -219,6 +207,10 @@ PrefabInstance:
     - target: {fileID: 540256168572372304, guid: d033ea4ebd68ec14ca27e4583d2023c7, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409130728018269441, guid: d033ea4ebd68ec14ca27e4583d2023c7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 1409130728018269441, guid: d033ea4ebd68ec14ca27e4583d2023c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -288,7 +280,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3704186588672871497, guid: d033ea4ebd68ec14ca27e4583d2023c7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -653,8 +646,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.24330045, y: 0.40247834, z: 0.24120113}
-  m_Center: {x: -0.0026610715, y: 0.19715221, z: 0.037341315}
+  m_Size: {x: 0.24330045, y: 0.40247834, z: 0.3801939}
+  m_Center: {x: -0.0026610717, y: 0.19715221, z: -0.032155287}
 --- !u!4 &4480108354036734047 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5839796488519672946, guid: 45d534ea263d7294d9c0908b750eda37, type: 3}

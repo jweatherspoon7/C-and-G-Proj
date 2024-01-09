@@ -49,7 +49,6 @@ public class StateController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Player was hit " + angle);
             anim.SetTrigger("damageTrig");
         }
     }
