@@ -14,7 +14,7 @@ public class StateController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         State.SetVariables(anim, cam, this);
-        ChangeState(new IdleState());
+        ChangeState(new MovementState());
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class StateController : MonoBehaviour
 
     public void ChangeState(State newState)
     {
-        if(newState == null) { return; }
+        if(newState == null) return; 
 
         if (currentState != null)
         {

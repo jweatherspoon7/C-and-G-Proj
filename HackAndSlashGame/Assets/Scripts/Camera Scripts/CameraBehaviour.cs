@@ -8,20 +8,13 @@ public class CameraBehaviour : MonoBehaviour
 {
     public Camera cam;
     //cm is cinemachine
-    public CinemachineTargetGroup cmLockonGroup;
+    public CinemachineVirtualCamera virtualCamera;
 
     public float locateRadius;
-
-    public float playerRadius = 8;
-    public float playerWeight = 1;
-
-    public float targetRadius = 0;
-    public float targetWeight = 2;
 
     public LayerMask targetLayerMask;
 
     private Animator animator;
-    private CinemachineTargetGroup.Target playerTarget;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +24,6 @@ public class CameraBehaviour : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         animator = GetComponent<Animator>();
-        playerTarget = new CinemachineTargetGroup.Target { target = transform, radius = playerRadius, weight = playerWeight};
     }
 
     // Update is called once per frame
@@ -76,7 +68,8 @@ public class CameraBehaviour : MonoBehaviour
                 target = pTarget;
             }
         }
-        SetCinemachineTargets(target);
+
+        virtualCamera.LookAt = target;
     }
 
     private List<Transform> FindPossibleTargets()
@@ -110,19 +103,5 @@ public class CameraBehaviour : MonoBehaviour
         }
 
         return possibleTargets;
-    }
-
-    private void SetCinemachineTargets(Transform target)
-    {
-        CinemachineTargetGroup.Target[] targetGroup = new CinemachineTargetGroup.Target[2];
-
-        targetGroup[0] = playerTarget;
-        targetGroup[1] = new CinemachineTargetGroup.Target { target = target, radius = targetRadius, weight = targetWeight};
-        cmLockonGroup.m_Targets = targetGroup;
-    }
-
-    private void ResetCinemachineTargets()
-    {
-        cmLockonGroup.m_Targets = null;
     }
 }

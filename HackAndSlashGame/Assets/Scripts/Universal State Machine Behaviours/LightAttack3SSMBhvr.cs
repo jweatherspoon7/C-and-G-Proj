@@ -14,6 +14,7 @@ public class LightAttack3SSMBhvr : StateMachineBehaviour
 
         if (animator.gameObject.tag.Equals("Enemy"))
         {
+            enemyTarget = animator.gameObject.GetComponent<PlayerTargeting>();
             animator.SetInteger("AttackInt", 0);
         }
     }
@@ -24,7 +25,6 @@ public class LightAttack3SSMBhvr : StateMachineBehaviour
 
         if (animator.gameObject.tag.Equals("Enemy"))
         {
-            enemyTarget.SetCanRotate(true);
             animator.SetBool("onCooldown", true);
             enemyTarget.StartCooldown(Random.Range(0.2f, 2));
         }

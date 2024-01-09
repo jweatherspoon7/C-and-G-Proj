@@ -11,7 +11,6 @@ public class LightAttack3State : BaseAttack
     //script for first move in a light combo set
     public override void OnEnter()
     {
-        Debug.Log("Enter LightAttack3");
         SSMBehavior = animator.GetBehaviour<LightAttack3SSMBhvr>();
         attackBehaviour = animator.GetBehaviour<LightAttack3StateBvhr>();
 
@@ -28,13 +27,12 @@ public class LightAttack3State : BaseAttack
 
         if (inAnimation && attackBehaviour.inUpdate)
         {
-            stateController.ChangeState(new IdleState());
+            stateController.ChangeState(new MovementState());
         }
     }
 
     public override void OnExit()
     {
-        Debug.Log("End LightAttack3");
         animator.SetBool("attack3Bool", false);
         base.OnExit();
     }

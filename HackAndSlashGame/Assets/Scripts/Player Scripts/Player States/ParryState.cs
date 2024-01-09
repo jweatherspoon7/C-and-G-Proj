@@ -13,7 +13,6 @@ public class ParryState : State
     public override void OnUpdate()
     {
         nextState = ListenForAttackInputs();
-        if (nextState == null) nextState = ListenForMovement();
         
         behaviour.SetNextState(nextState);
     }

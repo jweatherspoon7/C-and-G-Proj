@@ -13,7 +13,6 @@ public class LightAttack1State : BaseAttack
 
     public override void OnEnter()
     {
-        Debug.Log("Enter LightAttack1");
         SSMBehavior = animator.GetBehaviour<LightAttack1SSMBhvr>();
         attackBehaviour = animator.GetBehaviour<LightAttack1StateBhvr>();
         finisherBehaviour = animator.GetBehaviour<LightAttack1FinisherBhvr>();
@@ -37,13 +36,12 @@ public class LightAttack1State : BaseAttack
 
         if(inAttack && !SSMBehavior.inSubState)
         {
-            stateController.ChangeState(new IdleState());
+            stateController.ChangeState(new MovementState());
         }
     }
 
     public override void OnExit() 
     {
-        Debug.Log("End LightAttack1");
         animator.SetBool("attack1Bool", false);
         finisherBehaviour.inExit = false;
         if (!shouldCombo)

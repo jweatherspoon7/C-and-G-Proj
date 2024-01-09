@@ -10,7 +10,6 @@ public class LightAttack2State : BaseAttack
 
     public override void OnEnter()
     {
-        Debug.Log("Enter LightAttack2");
         attackBehaviour = animator.GetBehaviour<LightAttack2StateBvhr>();
         SSMBehavior = animator.GetBehaviour<LightAttack2SSMBhvr>();
 
@@ -33,7 +32,7 @@ public class LightAttack2State : BaseAttack
 
         if (inAnimation && !SSMBehavior.inSubState)
         {
-            stateController.ChangeState(new IdleState());
+            stateController.ChangeState(new MovementState());
         }
     }
 

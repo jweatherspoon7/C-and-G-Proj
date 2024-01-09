@@ -6,7 +6,7 @@ public class ParryStateBvhr : StateMachineBehaviour
 {
     [HideInInspector]
     public bool inSubState = false;
-    State nextState = new IdleState();
+    State nextState = new MovementState();
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -17,7 +17,7 @@ public class ParryStateBvhr : StateMachineBehaviour
     {
         if (animator.CompareTag("Player"))
         {
-            animator.gameObject.GetComponent<StateController>().ChangeState(new IdleState());
+            animator.gameObject.GetComponent<StateController>().ChangeState(nextState);
         }
         inSubState = false;
     }

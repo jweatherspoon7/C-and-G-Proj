@@ -29,7 +29,8 @@ public class DamageStateBhvr : StateMachineBehaviour
             animator.SetBool("attack1Bool", false);
             animator.SetBool("attack2Bool", false);
             animator.SetBool("attack3Bool", false);
-            gameObject.GetComponent<StateController>().ChangeState(new IdleState());
+
+            gameObject.GetComponent<StateController>().ChangeState(new MovementState());
         }
         else if (gameObject.CompareTag("Enemy"))
         {

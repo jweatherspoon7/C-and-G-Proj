@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//change to enemyController later
 public class PlayerTargeting : MonoBehaviour
 {
+
+    public int hitPoints = 10;
     public Transform playerTransform;
+
     private Vector3 playerRay;
-    private bool canRotate;
     private bool startCooldown;
 
     private float turnSmoothTime = 0.05f;
@@ -23,6 +26,12 @@ public class PlayerTargeting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(hitPoints <= 0)
+        {
+            Debug.Log("enemy has died!");
+            Destroy(gameObject);
+        }
+
         //move later
         if(startCooldown)
         {
@@ -44,11 +53,12 @@ public class PlayerTargeting : MonoBehaviour
 
     public Vector3 GetPlayerRay() { return playerRay; }
 
-    public Transform GetPlayerTransform() { return playerTransform; }
-
-    public bool GetCanRotate() {  return canRotate; }
-
-    public void SetCanRotate(bool cR) {  canRotate = cR; }
+    public void RegisterHit(int damage)
+    {
+        Debug.Log("Enemy hit for " + damage);
+        animator.SetTrigger("damageTrig");
+        hitPoints -= damage;
+    }
 
     public void StartCooldown(float time) { StartCoroutine(CooldownTime(time)); }
 

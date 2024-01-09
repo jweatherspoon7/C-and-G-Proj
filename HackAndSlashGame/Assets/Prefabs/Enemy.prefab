@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.088
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -290,7 +290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: be57db1c067a3154ab9ea1552d4a68ef, type: 3}
       propertyPath: m_Controller
@@ -492,9 +492,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
-  weaponLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   rayCastObjTransforms:
   - {fileID: 8909276853883017278}
   - {fileID: 5490947566979207013}

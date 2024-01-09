@@ -22,7 +22,7 @@ public class WalkState : State
 
     public override void OnUpdate()
     {
-        //gets keyboard inputs
+        //get keyboard inputs
         float vertInput = Input.GetAxisRaw("Vertical");
         float horizInput = Input.GetAxisRaw("Horizontal");
 

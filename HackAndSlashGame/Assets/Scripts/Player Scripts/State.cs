@@ -65,18 +65,4 @@ public abstract class State
 
         return null;
     }
-
-    protected State ListenForMovement()
-    {
-        float vertInput = Input.GetAxisRaw("Vertical");
-        float horizInput = Input.GetAxisRaw("Horizontal");
-        Vector3 inputMag = new Vector3(vertInput, 0, horizInput).normalized;
-
-        if (inputMag.magnitude >= 0.001)
-        {
-           return new WalkState();
-        }
-
-        return null;
-    }
 }

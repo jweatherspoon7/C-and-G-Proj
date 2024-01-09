@@ -15,7 +15,6 @@ public class LightAttack2SSMBhvr : StateMachineBehaviour
         if (animator.gameObject.tag.Equals("Enemy"))
         {
             enemyTarget = animator.gameObject.GetComponent<PlayerTargeting>();
-            enemyTarget.SetCanRotate(false);
             float rand = Random.Range(0, 1.0f);
             Debug.Log(rand);
             if (rand <= 0.5)
@@ -35,7 +34,6 @@ public class LightAttack2SSMBhvr : StateMachineBehaviour
 
         if (animator.gameObject.tag.Equals("Enemy"))
         {
-            enemyTarget.SetCanRotate(true);
             animator.SetBool("onCooldown", true);
             enemyTarget.StartCooldown(Random.Range(0.2f, 2));
         }

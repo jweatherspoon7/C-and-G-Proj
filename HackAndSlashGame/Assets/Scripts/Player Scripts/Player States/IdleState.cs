@@ -21,7 +21,6 @@ public class IdleState : State
     public override void OnUpdate() 
     {
         nextState = ListenForAttackInputs();
-        if(nextState == null) nextState = ListenForMovement();
 
         if (behavior.inUpdate)
         {
