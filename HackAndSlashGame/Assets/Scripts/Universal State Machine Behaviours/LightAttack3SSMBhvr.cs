@@ -10,11 +10,11 @@ public class LightAttack3SSMBhvr : StateMachineBehaviour
 
     override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
     {
-        Debug.Log("attack 3");
         inSubState = true;
 
         if (animator.gameObject.tag.Equals("Enemy"))
         {
+            Debug.Log("attack 3");
             enemyTarget = animator.gameObject.GetComponent<PlayerTargeting>();
             animator.SetInteger("AttackInt", 0);
         }
