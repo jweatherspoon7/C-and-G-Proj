@@ -14,9 +14,10 @@ public class LightAttack2SSMBhvr : StateMachineBehaviour
 
         if (animator.gameObject.tag.Equals("Enemy"))
         {
+            Debug.Log("attack 2");
             enemyTarget = animator.gameObject.GetComponent<PlayerTargeting>();
             float rand = Random.Range(0, 1.0f);
-            Debug.Log(rand);
+
             if (rand <= 0.5)
             {
                 animator.SetInteger("AttackInt", 3);

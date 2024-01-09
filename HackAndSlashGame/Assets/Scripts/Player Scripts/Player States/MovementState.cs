@@ -42,6 +42,8 @@ public class MovementState : State
 
     private void FreeLookMovement(float horizInput, float vertInput)
     {
+
+        animator.SetFloat("horizAxis", 0);
         Vector3 direction = new Vector3(vertInput, 0, horizInput).normalized;
 
         if (direction.magnitude >= 0.01)
@@ -67,7 +69,6 @@ public class MovementState : State
     private void LockOnMovement(float horizInput, float vertInput)
     {
         Vector3 direction = new Vector3(vertInput, 0, horizInput).normalized;
-        transform.rotation = Quaternion.Euler(0, camTransform.eulerAngles.y, 0);
 
         if (direction.magnitude >= 0.01)
         {

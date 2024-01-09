@@ -511,6 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f0ff8a3248dd841ac57789f0369fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitPoints: 10
   playerTransform: {fileID: 0}
 --- !u!1 &1633182700655152252 stripped
 GameObject:

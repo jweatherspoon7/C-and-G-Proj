@@ -134,12 +134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  cmLockonGroup: {fileID: 0}
+  virtualCamera: {fileID: 0}
   locateRadius: 20
-  playerRadius: 8
-  playerWeight: 1
-  targetRadius: 0
-  targetWeight: 2
   targetLayerMask:
     serializedVersion: 2
     m_Bits: 64

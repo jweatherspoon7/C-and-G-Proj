@@ -6,9 +6,6 @@ public class EnemyMovementBvhr : StateMachineBehaviour
 {
     private PlayerTargeting playerTargeting;
 
-    //use to keep enemy from running from the player
-    private bool hasBackedup = false;
-
     //for smooth damp on movement
     private float smoothTime = 0.05f;
     private float smoothVelocity;
@@ -27,17 +24,20 @@ public class EnemyMovementBvhr : StateMachineBehaviour
 
         if (animator.GetBool("onCooldown"))
         {
-            if(!(playerRay.magnitude >= 2 && playerRay.magnitude <= 3) && !hasBackedup)
+            if( playerRay.magnitude < 2)
             {
+                Debug.Log("cooldown backup");
                 movementTarget = -1;
             }
-            else if(playerRay.magnitude > 3.5f)
+            else if(playerRay.magnitude >= 3)
             {
+                Debug.Log("cooldown move to player");
                 movementTarget = 1;
             }
             else
             {
-                hasBackedup = true;
+                Debug.Log("cooldown stand still");
+                movementTarget = 0;
             }
         }
         else
@@ -59,7 +59,6 @@ public class EnemyMovementBvhr : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        hasBackedup = false;
         animator.SetFloat("movementBlend", 0);
     }
 }
