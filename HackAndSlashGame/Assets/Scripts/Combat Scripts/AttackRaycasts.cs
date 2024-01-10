@@ -90,7 +90,7 @@ public class AttackRaycasts : MonoBehaviour
             }
             else
             {
-                obj.GetComponent<PlayerTargeting>().RegisterHit(damage);
+                obj.GetComponent<EnemyController>().RegisterHit(damage);
             }
         }
     }

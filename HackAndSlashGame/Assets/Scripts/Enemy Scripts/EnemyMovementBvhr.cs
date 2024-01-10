@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovementBvhr : StateMachineBehaviour
 {
-    private PlayerTargeting playerTargeting;
+    private EnemyController controller;
 
     //for smooth damp on movement
     private float smoothTime = 0.05f;
@@ -13,13 +13,13 @@ public class EnemyMovementBvhr : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        playerTargeting = animator.gameObject.GetComponent<PlayerTargeting>();
+        controller = animator.gameObject.GetComponent<EnemyController>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Vector3 playerRay = playerTargeting.GetPlayerRay();
+        Vector3 playerRay = controller.GetPlayerRay();
         int movementTarget = 0;
 
         if (animator.GetBool("onCooldown"))

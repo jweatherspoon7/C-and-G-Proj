@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //change to enemyController later
-public class PlayerTargeting : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
 
-    public int hitPoints = 10;
+    public int maxHitPoints = 10;
+    private int hitPoints;
     public Transform playerTransform;
 
     private Vector3 playerRay;
@@ -18,10 +19,16 @@ public class PlayerTargeting : MonoBehaviour
 
     private Animator animator;
 
+    private FloatingHealthBar healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
+        hitPoints = maxHitPoints;
+
         animator = GetComponent<Animator>();
+
+        healthBar = GetComponentInChildren<FloatingHealthBar>();
     }
 
     // Update is called once per frame
@@ -29,13 +36,6 @@ public class PlayerTargeting : MonoBehaviour
     {
         if (!dead)
         {
-            if (hitPoints <= 0)
-            {
-                dead = true;
-                Debug.Log("enemy has died!");
-                animator.SetTrigger("deathTrig");
-            }
-
             //move later
             if (startCooldown)
             {
@@ -63,8 +63,16 @@ public class PlayerTargeting : MonoBehaviour
     {
         animator.SetTrigger("damageTrig");
         hitPoints -= damage;
+        healthBar.UpdateHealthBar(hitPoints, maxHitPoints);
 
-        Debug.Log("Enemy has " + damage + "hp");
+        Debug.Log("Enemy has " + hitPoints + "hp");
+
+        if (hitPoints <= 0)
+        {
+            dead = true;
+            Debug.Log("enemy has died!");
+            animator.SetTrigger("deathTrig");
+        }
     }
 
     public void StartCooldown(float time) { StartCoroutine(CooldownTime(time)); }

@@ -6,7 +6,7 @@ public class LightAttack2SSMBhvr : StateMachineBehaviour
 {
     [HideInInspector]
     public bool inSubState = false;
-    PlayerTargeting enemyTarget;
+    EnemyController enemyController;
 
     override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
     {
@@ -15,7 +15,7 @@ public class LightAttack2SSMBhvr : StateMachineBehaviour
         if (animator.gameObject.tag.Equals("Enemy"))
         {
             Debug.Log("attack 2");
-            enemyTarget = animator.gameObject.GetComponent<PlayerTargeting>();
+            enemyController = animator.gameObject.GetComponent<EnemyController>();
             float rand = Random.Range(0, 1.0f);
 
             if (rand <= 0.5)
@@ -36,7 +36,7 @@ public class LightAttack2SSMBhvr : StateMachineBehaviour
         if (animator.gameObject.tag.Equals("Enemy"))
         {
             animator.SetBool("onCooldown", true);
-            enemyTarget.StartCooldown(Random.Range(0.2f, 2));
+            enemyController.StartCooldown(Random.Range(0.2f, 2));
         }
     }
 }

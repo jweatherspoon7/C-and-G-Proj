@@ -37,8 +37,8 @@ public class DamageStateBhvr : StateMachineBehaviour
             animator.SetInteger("AttackInt",0);
             animator.SetBool("onCooldown", true);
 
-            PlayerTargeting enemyTarget = animator.gameObject.GetComponent<PlayerTargeting>();
-            enemyTarget.StartCooldown(Random.Range(0,1));
+            EnemyController controller = animator.gameObject.GetComponent<EnemyController>();
+            controller.StartCooldown(Random.Range(0,1));
         }
     }
 }
