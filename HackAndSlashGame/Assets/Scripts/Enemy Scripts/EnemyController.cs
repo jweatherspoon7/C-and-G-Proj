@@ -7,6 +7,8 @@ public class EnemyController : MonoBehaviour
 {
 
     public int maxHitPoints = 10;
+    public GameObject levelHandler;
+
     private int hitPoints;
     public Transform playerTransform;
 
@@ -72,6 +74,7 @@ public class EnemyController : MonoBehaviour
             dead = true;
             Debug.Log("enemy has died!");
             animator.SetTrigger("deathTrig");
+            levelHandler.GetComponent<LevelHandler>().KilledEnemy(gameObject);
         }
     }
 
