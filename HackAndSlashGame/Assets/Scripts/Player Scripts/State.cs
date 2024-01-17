@@ -51,13 +51,13 @@ public abstract class State
 
     public virtual void OnExit() { }
 
-    protected State ListenForAttackInputs()
+    protected State ListenForAttackInputs(bool listenForParry)
     {
         if (Input.GetMouseButtonDown(0))
         {
             return new LightAttack1State();
         }
-        else if (Input.GetMouseButtonDown(1))
+        else if (Input.GetMouseButtonDown(1) && listenForParry)
         {
             //get parry state
             return new ParryState();

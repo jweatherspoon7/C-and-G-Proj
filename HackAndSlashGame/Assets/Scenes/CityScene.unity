@@ -1841,7 +1841,6 @@ MonoBehaviour:
   - {fileID: 1547353760}
   canvas: {fileID: 1671581858}
   howToScreen: {fileID: 1940748401}
-  mainMenu: {fileID: 1457550225}
 --- !u!1001 &1463801486
 PrefabInstance:
   m_ObjectHideFlags: 0

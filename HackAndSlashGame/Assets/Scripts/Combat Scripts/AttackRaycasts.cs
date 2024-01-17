@@ -88,6 +88,10 @@ public class AttackRaycasts : MonoBehaviour
             {
                 obj.GetComponent<StateController>().RegisterHit(transform);
             }
+            else if(obj.CompareTag("Boss"))
+            {
+                obj.GetComponent<JonathanController>().RegisterHit(damage);
+            }
             else
             {
                 obj.GetComponent<EnemyController>().RegisterHit(damage);

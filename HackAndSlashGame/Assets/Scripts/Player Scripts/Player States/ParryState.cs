@@ -7,13 +7,19 @@ public class ParryState : State
     ParryStateBvhr behaviour = animator.GetBehaviour<ParryStateBvhr>();
     public override void OnEnter()
     {
-        animator.SetTrigger("parryTrig");
+        Debug.Log("enter parry");
+        animator.SetBool("isParrying", true);
     }
 
     public override void OnUpdate()
     {
-        nextState = ListenForAttackInputs();
-        
+        nextState = ListenForAttackInputs(false);
+
         behaviour.SetNextState(nextState);
+    }
+
+    public override void OnExit()
+    {
+        Debug.Log("exit parry");
     }
 }

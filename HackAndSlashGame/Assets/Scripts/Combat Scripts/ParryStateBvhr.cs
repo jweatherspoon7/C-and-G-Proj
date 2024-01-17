@@ -17,6 +17,7 @@ public class ParryStateBvhr : StateMachineBehaviour
     {
         if (animator.CompareTag("Player"))
         {
+            animator.SetBool("isParrying", false);
             animator.gameObject.GetComponent<StateController>().ChangeState(nextState);
         }
         inSubState = false;

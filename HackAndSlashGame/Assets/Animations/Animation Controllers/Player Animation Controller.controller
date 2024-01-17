@@ -411,7 +411,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Parry Animation
-  m_Speed: 3
+  m_Speed: 4
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4684842920969172332}
@@ -1040,6 +1040,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: isParrying
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base
@@ -1165,9 +1171,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.108485
-  m_TransitionOffset: 0.0036124329
-  m_ExitTime: 0.7721473
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -1360,7 +1366,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: parryTrig
+    m_ConditionEvent: isParrying
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6724337327634649064}
@@ -1455,7 +1461,7 @@ AnimatorStateMachine:
     m_Position: {x: 220, y: 140, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: -327976000152859458}
-    m_Position: {x: 220, y: 70, z: 0}
+    m_Position: {x: 130, y: 80, z: 0}
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions:
@@ -1472,7 +1478,7 @@ AnimatorStateMachine:
   m_AnyStatePosition: {x: 260, y: 330, z: 0}
   m_EntryPosition: {x: 240, y: 270, z: 0}
   m_ExitPosition: {x: -30, y: 80, z: 0}
-  m_ParentStateMachinePosition: {x: -30, y: 150, z: 0}
+  m_ParentStateMachinePosition: {x: -130, y: 200, z: 0}
   m_DefaultState: {fileID: -1613049137194521441}
 --- !u!1101 &8227443132767586773
 AnimatorStateTransition:

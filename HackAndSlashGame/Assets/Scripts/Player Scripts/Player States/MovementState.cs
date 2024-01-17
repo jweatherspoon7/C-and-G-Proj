@@ -29,7 +29,7 @@ public class MovementState : State
         float horizInput = Input.GetAxisRaw("Horizontal");
         float vertInput = Input.GetAxisRaw("Vertical");
 
-        nextState = ListenForAttackInputs();
+        nextState = ListenForAttackInputs(true);
 
         if(behavior.inUpdate)
         {
