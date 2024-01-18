@@ -20,5 +20,15 @@ public class DeathBhvr : StateMachineBehaviour
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) { Destroy(gameObject); }
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        if (gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+
+        }
+    }
 }

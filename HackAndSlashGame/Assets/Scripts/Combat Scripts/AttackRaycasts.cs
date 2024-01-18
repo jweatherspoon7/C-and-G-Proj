@@ -86,7 +86,7 @@ public class AttackRaycasts : MonoBehaviour
 
             if (obj.tag.Equals("Player"))
             {
-                obj.GetComponent<StateController>().RegisterHit(transform);
+                obj.GetComponent<StateController>().RegisterHit(transform, damage);
             }
             else if(obj.CompareTag("Boss"))
             {

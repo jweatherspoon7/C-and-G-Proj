@@ -10,6 +10,9 @@ public class EnemyMovementBvhr : StateMachineBehaviour
     private float smoothTime = 0.05f;
     private float smoothVelocity;
 
+    //bool to keep enemy from running away from the player
+    private bool hasBackedUp = false;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -24,10 +27,11 @@ public class EnemyMovementBvhr : StateMachineBehaviour
 
         if (animator.GetBool("onCooldown"))
         {
-            if( playerRay.magnitude < 2)
+            if( playerRay.magnitude < 2 && !hasBackedUp)
             {
                 Debug.Log("cooldown backup");
                 movementTarget = -1;
+                hasBackedUp=true;
             }
             else if(playerRay.magnitude >= 3)
             {
@@ -60,5 +64,6 @@ public class EnemyMovementBvhr : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetFloat("movementBlend", 0);
+        hasBackedUp = false;
     }
 }

@@ -2,32 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu: MonoBehaviour
 {
-    public GameObject[] objectsToActivate;
-
     public Canvas canvas;
     public GameObject howToScreen;
+    public GameObject levelSelectScreen;
 
     public void OnEnable()
     {
         howToScreen.SetActive(false);
+        levelSelectScreen.SetActive(false);
     }
 
     //use to remove canvas and to active gameObjects for the game
     public void PlayGame()
    {
-        for(int i = 0; i< objectsToActivate.Length;i++)
-        {
-            objectsToActivate[i].SetActive(true);
-        }
-
-        //remove canvas when clicked
-        canvas.enabled = false;
+        levelSelectScreen.SetActive(true);
    }
 
     public void HowTo()
     {
         howToScreen.SetActive(true);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
