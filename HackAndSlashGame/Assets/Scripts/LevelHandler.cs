@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LevelHandler : MonoBehaviour
 {
     private List<GameObject> enemiesList = new List<GameObject>();
-    public Canvas endScreen;
+    public GameObject endScreen;
     public GameObject winText;
     public GameObject deathText;
 
@@ -21,11 +21,7 @@ public class LevelHandler : MonoBehaviour
     {
         if(enemiesList.Count == 0)
         {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-
-            endScreen.enabled = true;
-            winText.SetActive(true);
+            Debug.Log("win");
         }
     }
 
@@ -35,20 +31,22 @@ public class LevelHandler : MonoBehaviour
 
         if (enemiesList.Count == 0)
         {
+            Debug.Log("win");
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
 
-            endScreen.enabled = true;
+            endScreen.SetActive(true);
             winText.SetActive(true);
         }
     }
 
     public void PlayerDeath()
     {
+        Debug.Log("lose");
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
-        endScreen.enabled = true;
+        endScreen.SetActive(true);
         deathText.SetActive(true);
     }
 }

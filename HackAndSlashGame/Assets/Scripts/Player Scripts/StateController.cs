@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+//centeral player controller class
 public class StateController : MonoBehaviour
 {
     State currentState;
@@ -12,7 +13,7 @@ public class StateController : MonoBehaviour
 
     [Header("Parry Particles")]
     public ParticleSystem parryParticle;
-w
+
     private FloatingHealthBar healthBar;
 
     private const int MAX_HEALTH = 15;

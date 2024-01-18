@@ -13,6 +13,7 @@ public class MovementState : State
     //use override keyword to override methods of base class
     public override void OnEnter()
     {
+        Debug.Log("movement");
         animator.SetBool("canMove", true);
         animator.SetBool("isAttacking", false);
         animator.SetBool("attack1Bool", false);
