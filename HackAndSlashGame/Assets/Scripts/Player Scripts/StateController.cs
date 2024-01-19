@@ -14,6 +14,11 @@ public class StateController : MonoBehaviour
     [Header("Parry Particles")]
     public ParticleSystem parryParticle;
 
+    [Header("Audio Clips")]
+    public AudioClip parryClip;
+
+    private AudioSource audioSource;
+
     private HealthBar healthBar;
 
     private const int MAX_HEALTH = 20;
@@ -27,6 +32,8 @@ public class StateController : MonoBehaviour
         anim = GetComponent<Animator>();
         State.SetVariables(anim, cam, this);
         ChangeState(new MovementState());
+
+        audioSource = GetComponent<AudioSource>();
 
         healthBar = GetComponentInChildren<HealthBar>();
 
@@ -61,6 +68,7 @@ public class StateController : MonoBehaviour
         //if enemy is in front of play when parring
         if(angle <= 65 && anim.GetBehaviour<ParryStateBvhr>().inSubState)
         {
+            audioSource.PlayOneShot(parryClip, 0.7f);
             parryParticle.Play();
         }
         else

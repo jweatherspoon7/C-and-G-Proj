@@ -723,6 +723,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 1165308972320902751, guid: 7b7503adc1601cb4abb9b205ce5b929b, type: 3}
+      propertyPath: parryClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 05300519b5d65754fb17ed1ebcb29655, type: 3}
     - target: {fileID: 1405451758248046434, guid: 7b7503adc1601cb4abb9b205ce5b929b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -802,7 +806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1544262218164268839, guid: a8946eebab536a0428c4bf138549ad1f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2172286305185871261, guid: a8946eebab536a0428c4bf138549ad1f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -854,11 +858,11 @@ PrefabInstance:
       objectReference: {fileID: 119849045}
     - target: {fileID: 5885888295223381565, guid: a8946eebab536a0428c4bf138549ad1f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5885888295223381565, guid: a8946eebab536a0428c4bf138549ad1f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1019,11 +1023,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8551307058975195689, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000016130234
+      value: -0.000000001613024
       objectReference: {fileID: 0}
     - target: {fileID: 8551307058975195689, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.5482303e-11
+      value: 1.548231e-11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

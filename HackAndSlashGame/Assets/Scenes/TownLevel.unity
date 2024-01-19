@@ -12998,6 +12998,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 963194227}
     - target: {fileID: 1165308972320902751, guid: 7b7503adc1601cb4abb9b205ce5b929b, type: 3}
+      propertyPath: parryClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 05300519b5d65754fb17ed1ebcb29655, type: 3}
+    - target: {fileID: 1165308972320902751, guid: 7b7503adc1601cb4abb9b205ce5b929b, type: 3}
       propertyPath: levelHandler
       value: 
       objectReference: {fileID: 2341743}
@@ -15131,31 +15135,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2786982026446175648, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 83.820694
+      value: -94.6423
       objectReference: {fileID: 0}
     - target: {fileID: 2786982026446175648, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.604805
+      value: 3.3548048
       objectReference: {fileID: 0}
     - target: {fileID: 2786982026446175648, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 65.24292
+      value: -197.07367
       objectReference: {fileID: 0}
     - target: {fileID: 2786982026446175648, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.25707802
+      value: 0.0015234859
       objectReference: {fileID: 0}
     - target: {fileID: 2786982026446175648, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.011733631
+      value: 0.000065972046
       objectReference: {fileID: 0}
     - target: {fileID: 2786982026446175648, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9653145
+      value: 0.9990626
       objectReference: {fileID: 0}
     - target: {fileID: 2786982026446175648, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.044059172
+      value: -0.04326276
       objectReference: {fileID: 0}
     - target: {fileID: 3149701715679941218, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_Follow

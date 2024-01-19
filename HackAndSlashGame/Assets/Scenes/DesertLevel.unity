@@ -5758,7 +5758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 508898675157772793, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.03063804
+      value: 0.030638041
       objectReference: {fileID: 0}
     - target: {fileID: 508898675157772793, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalRotation.y
@@ -5810,31 +5810,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2786982026446175648, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -292.69104
+      value: -84.78
       objectReference: {fileID: 0}
     - target: {fileID: 2786982026446175648, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.53023887
+      value: 3.5202389
       objectReference: {fileID: 0}
     - target: {fileID: 2786982026446175648, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 59.244667
+      value: -183.53534
       objectReference: {fileID: 0}
     - target: {fileID: 2786982026446175648, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7075212
+      value: 0.0015234859
       objectReference: {fileID: 0}
     - target: {fileID: 2786982026446175648, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.030638041
+      value: 0.000065972046
       objectReference: {fileID: 0}
     - target: {fileID: 2786982026446175648, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7053667
+      value: 0.9990626
       objectReference: {fileID: 0}
     - target: {fileID: 2786982026446175648, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.030544743
+      value: -0.04326276
       objectReference: {fileID: 0}
     - target: {fileID: 3149701715679941218, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_Follow
@@ -7360,6 +7360,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 408431184}
+    - target: {fileID: 1165308972320902751, guid: 7b7503adc1601cb4abb9b205ce5b929b, type: 3}
+      propertyPath: parryClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 05300519b5d65754fb17ed1ebcb29655, type: 3}
     - target: {fileID: 1165308972320902751, guid: 7b7503adc1601cb4abb9b205ce5b929b, type: 3}
       propertyPath: levelHandler
       value: 

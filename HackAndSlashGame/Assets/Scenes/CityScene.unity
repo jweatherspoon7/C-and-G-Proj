@@ -210,6 +210,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 531420363}
     - target: {fileID: 1165308972320902751, guid: 7b7503adc1601cb4abb9b205ce5b929b, type: 3}
+      propertyPath: parryClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 05300519b5d65754fb17ed1ebcb29655, type: 3}
+    - target: {fileID: 1165308972320902751, guid: 7b7503adc1601cb4abb9b205ce5b929b, type: 3}
       propertyPath: levelHandler
       value: 
       objectReference: {fileID: 1547353762}
@@ -757,11 +761,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8551307058975195689, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0000000011511249
+      value: 9.312797e-10
       objectReference: {fileID: 0}
     - target: {fileID: 8551307058975195689, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -1.1048856e-11
+      value: 8.938713e-12
       objectReference: {fileID: 0}
     - target: {fileID: 8551307058975195689, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalRotation.y
@@ -769,7 +773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8551307058975195689, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00959787
+      value: -0.009597869
       objectReference: {fileID: 0}
     - target: {fileID: 8866711841797751086, guid: 126a2fb749ec7e243ba0f471c1b58b37, type: 3}
       propertyPath: m_FollowOffset.y
@@ -10182,6 +10186,7 @@ MonoBehaviour:
   endScreen: {fileID: 1993583368}
   winText: {fileID: 1107354639}
   deathText: {fileID: 1545458262}
+  targetTag: Enemy
 --- !u!95 &1621314433 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1308223573287545797, guid: 7b7503adc1601cb4abb9b205ce5b929b, type: 3}

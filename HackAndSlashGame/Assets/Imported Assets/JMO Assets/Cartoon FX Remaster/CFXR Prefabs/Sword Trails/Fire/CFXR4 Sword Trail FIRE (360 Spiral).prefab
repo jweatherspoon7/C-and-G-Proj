@@ -9602,7 +9602,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.69803923, b: 0.3529412, a: 1}
-  m_Intensity: 1.7599999
+  m_Intensity: 0
   m_Range: 5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -9670,7 +9670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6710139492206580329, guid: 95b8d3d65b5d7f1409c4ed1723887826, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.847
       objectReference: {fileID: 0}
     - target: {fileID: 6710139492206580329, guid: 95b8d3d65b5d7f1409c4ed1723887826, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9709,12 +9709,28 @@ PrefabInstance:
       value: CFXR4 Sword Trail FIRE (360 Spiral)
       objectReference: {fileID: 0}
     - target: {fileID: 6710139492206580334, guid: 95b8d3d65b5d7f1409c4ed1723887826, type: 3}
+      propertyPath: ShapeModule.type
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6710139492206580334, guid: 95b8d3d65b5d7f1409c4ed1723887826, type: 3}
       propertyPath: ShapeModule.enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6710139492206580334, guid: 95b8d3d65b5d7f1409c4ed1723887826, type: 3}
       propertyPath: TrailModule.enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6710139492206580334, guid: 95b8d3d65b5d7f1409c4ed1723887826, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 1.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6710139492206580334, guid: 95b8d3d65b5d7f1409c4ed1723887826, type: 3}
+      propertyPath: ShapeModule.radius.spread
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6710139492206580334, guid: 95b8d3d65b5d7f1409c4ed1723887826, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6710139492206580334, guid: 95b8d3d65b5d7f1409c4ed1723887826, type: 3}
       propertyPath: CustomDataModule.vector0_1.scalar
@@ -9851,10 +9867,6 @@ PrefabInstance:
     - target: {fileID: 6710139492206580334, guid: 95b8d3d65b5d7f1409c4ed1723887826, type: 3}
       propertyPath: CustomDataModule.vector0_2.maxCurve.m_Curve.Array.data[1].outWeight
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6710139492206580335, guid: 95b8d3d65b5d7f1409c4ed1723887826, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6710139492206580335, guid: 95b8d3d65b5d7f1409c4ed1723887826, type: 3}
       propertyPath: m_Materials.Array.data[0]
