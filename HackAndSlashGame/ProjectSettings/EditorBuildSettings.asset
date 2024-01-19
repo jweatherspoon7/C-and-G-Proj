@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CityScene.unity
     guid: 2a2c6353f55e71b4388ab496c26eb97b
+  - enabled: 1
+    path: Assets/Scenes/DesertLevel.unity
+    guid: 7df6524f7c60cff44a85fb4de2d1341a
+  - enabled: 1
+    path: Assets/Scenes/TownLevel.unity
+    guid: 04ad85f6dc9bccd40a3e53ef5541c9cc
   m_configObjects: {}

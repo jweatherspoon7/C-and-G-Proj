@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour
 {
 
     public int maxHitPoints = 10;
-    public GameObject levelHandler;
+    public LevelHandler levelHandler;
 
     private int hitPoints;
     public Transform playerTransform;
@@ -20,6 +20,8 @@ public class EnemyController : MonoBehaviour
     private Animator animator;
 
     private HealthBar healthBar;
+
+    private bool dead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +46,7 @@ public class EnemyController : MonoBehaviour
         //Smooths the player angle over time. 
         float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
 
-        transform.rotation = Quaternion.Euler(0, angle, 0);
+        if(!dead) transform.rotation = Quaternion.Euler(0, angle, 0);
 
     }
 
@@ -52,18 +54,21 @@ public class EnemyController : MonoBehaviour
 
     public void RegisterHit(int damage)
     {
-        animator.SetTrigger("damageTrig");
-        hitPoints -= damage;
-        healthBar.UpdateHealthBar(hitPoints, maxHitPoints);
-
-        Debug.Log("Enemy has " + hitPoints + "hp");
-
-        if (hitPoints <= 0)
+        if (!dead)
         {
-            Debug.Log("enemy has died!");
+            animator.SetTrigger("damageTrig");
+            hitPoints -= damage;
+            healthBar.UpdateHealthBar(hitPoints, maxHitPoints);
 
-            animator.SetTrigger("deathTrig");
-            if (levelHandler != null) levelHandler.GetComponent<LevelHandler>().KilledEnemy(gameObject);
+            Debug.Log("Enemy has " + hitPoints + "hp");
+
+            if (hitPoints <= 0)
+            {
+                Debug.Log("enemy has died!");
+
+                animator.SetTrigger("deathTrig");
+                //if (levelHandler != null) levelHandler.KilledEnemy(gameObject);
+            }
         }
     }
 

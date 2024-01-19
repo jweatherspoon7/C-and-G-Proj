@@ -10,18 +10,27 @@ public class LevelHandler : MonoBehaviour
     public GameObject winText;
     public GameObject deathText;
 
+    public string targetTag = "Enemy";
+
+    private GameObject endText;
+    private bool showScreen = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        enemiesList.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+        enemiesList.AddRange(GameObject.FindGameObjectsWithTag(targetTag));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(enemiesList.Count == 0)
+        if (showScreen)
         {
-            Debug.Log("win");
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
+            endScreen.SetActive(true);
+            endText.SetActive(true);
         }
     }
 
@@ -32,21 +41,25 @@ public class LevelHandler : MonoBehaviour
         if (enemiesList.Count == 0)
         {
             Debug.Log("win");
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
 
-            endScreen.SetActive(true);
-            winText.SetActive(true);
+            endText = winText;
+
+            StartCoroutine(TimeToEndScreen(3));
         }
     }
 
     public void PlayerDeath()
     {
         Debug.Log("lose");
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
 
-        endScreen.SetActive(true);
-        deathText.SetActive(true);
+        endText = deathText;
+
+        StartCoroutine(TimeToEndScreen(3));
+    }
+
+    IEnumerator TimeToEndScreen(float time)
+    {
+        yield return new WaitForSeconds(time);
+        showScreen = true;
     }
 }

@@ -19,6 +19,8 @@ public class StateController : MonoBehaviour
     private const int MAX_HEALTH = 20;
     private int currentHealth;
 
+    private bool dead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,16 +65,20 @@ public class StateController : MonoBehaviour
         }
         else
         {
-            //deal damage
-            currentHealth -= damage;
-            Debug.Log("health" + damage);
-            healthBar.UpdateHealthBar(currentHealth, MAX_HEALTH);
-            anim.SetTrigger("damageTrig");
 
-            if(currentHealth <= 0)
+            if (!dead)
             {
-                anim.SetTrigger("deathTrig");
-                levelHandler.PlayerDeath();
+                //deal damage
+                currentHealth -= damage;
+                Debug.Log("health" + damage);
+                healthBar.UpdateHealthBar(currentHealth, MAX_HEALTH);
+                anim.SetTrigger("damageTrig");
+
+                if (currentHealth <= 0)
+                {
+                    anim.SetTrigger("deathTrig");
+                    //levelHandler.PlayerDeath();
+                }
             }
         }
     }

@@ -8,6 +8,8 @@ public class LevelSelectMenu : MonoBehaviour
 {
     public GameObject mainMenu;
     private const int CITY_LEVEL_INDEX = 1;
+    private const int DESERT_LEVEl_INDEX = 2;
+    private const int TOWN_LEVEl_INDEX = 3;
 
     public void OnEnable()
     {
@@ -17,6 +19,16 @@ public class LevelSelectMenu : MonoBehaviour
     public void CityLevelButton()
     {
         SceneManager.LoadScene(CITY_LEVEL_INDEX);
+    }
+
+    public void DesertLevelButton()
+    {
+        SceneManager.LoadScene(DESERT_LEVEl_INDEX);
+    }
+
+    public void TownLevelButton()
+    {
+        SceneManager.LoadScene(TOWN_LEVEl_INDEX);
     }
 
     public void Back()

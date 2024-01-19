@@ -6,6 +6,9 @@ public class JonathanController : MonoBehaviour
 {
     public Transform playerTransform;
     public int maxHitPoints = 50;
+
+    public LevelHandler levelHandler;
+
     private int hitPoints;
 
     private Vector3 playerRay;
@@ -17,6 +20,8 @@ public class JonathanController : MonoBehaviour
     private Animator animator;
 
     private HealthBar healthBar;
+
+    private bool dead = false;
 
     void Start()
     {
@@ -42,7 +47,7 @@ public class JonathanController : MonoBehaviour
         //Smooths the player angle over time. 
         float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
 
-        if(turnEnabled) transform.rotation = Quaternion.Euler(0, angle, 0);
+        if(turnEnabled && !dead) transform.rotation = Quaternion.Euler(0, angle, 0);
     }
 
     public void RegisterHit(int damage) 
@@ -50,9 +55,10 @@ public class JonathanController : MonoBehaviour
         hitPoints -= damage;
         healthBar.UpdateHealthBar(hitPoints, maxHitPoints);
 
-        if(hitPoints <= 0)
+        if(hitPoints <= 0 && !dead)
         {
             animator.SetTrigger("DeathTrig");
+            dead = true;
         }
     }
 
