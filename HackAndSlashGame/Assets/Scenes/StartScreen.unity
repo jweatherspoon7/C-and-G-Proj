@@ -2160,7 +2160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0012817383, y: 69.23891}
+  m_AnchoredPosition: {x: -0.0023193, y: 90}
   m_SizeDelta: {x: 766.0254, y: 334.3022}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1189543534
@@ -2185,14 +2185,20 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'How to Play!:
 
-    W,A,S,D to move
+    Defeat all the enemies to beat the level.
+
+
+    Controls:
+
+    W,A,S,D
+    to move
 
     Left click to attack
 
-    Right
-    click to block
+    Right click to block
 
-    Middle Mouse button to lock on to an enemy'
+    Middle Mouse
+    button to lock on to an enemy'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2285,7 +2291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1198498163
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2339,7 +2345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1404434544
 RectTransform:
   m_ObjectHideFlags: 0
