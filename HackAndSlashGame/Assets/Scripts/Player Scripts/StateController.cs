@@ -14,9 +14,9 @@ public class StateController : MonoBehaviour
     [Header("Parry Particles")]
     public ParticleSystem parryParticle;
 
-    private FloatingHealthBar healthBar;
+    private HealthBar healthBar;
 
-    private const int MAX_HEALTH = 15;
+    private const int MAX_HEALTH = 20;
     private int currentHealth;
 
     // Start is called before the first frame update
@@ -26,7 +26,7 @@ public class StateController : MonoBehaviour
         State.SetVariables(anim, cam, this);
         ChangeState(new MovementState());
 
-        healthBar = GetComponentInChildren<FloatingHealthBar>();
+        healthBar = GetComponentInChildren<HealthBar>();
 
         currentHealth = MAX_HEALTH;
     }
@@ -65,6 +65,7 @@ public class StateController : MonoBehaviour
         {
             //deal damage
             currentHealth -= damage;
+            Debug.Log("health" + damage);
             healthBar.UpdateHealthBar(currentHealth, MAX_HEALTH);
             anim.SetTrigger("damageTrig");
 

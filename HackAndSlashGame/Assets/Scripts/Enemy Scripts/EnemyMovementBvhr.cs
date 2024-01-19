@@ -27,20 +27,17 @@ public class EnemyMovementBvhr : StateMachineBehaviour
 
         if (animator.GetBool("onCooldown"))
         {
-            if( playerRay.magnitude < 2 && !hasBackedUp)
+            if(playerRay.magnitude < 2 && !hasBackedUp)
             {
-                Debug.Log("cooldown backup");
                 movementTarget = -1;
-                hasBackedUp=true;
             }
             else if(playerRay.magnitude >= 3)
             {
-                Debug.Log("cooldown move to player");
                 movementTarget = 1;
             }
             else
             {
-                Debug.Log("cooldown stand still");
+                hasBackedUp = true;
                 movementTarget = 0;
             }
         }
@@ -52,7 +49,8 @@ public class EnemyMovementBvhr : StateMachineBehaviour
             }
             else
             {
-                animator.SetInteger("AttackInt", 1);
+                float rand = Random.Range(0, 1.0f);
+                animator.SetFloat("attackFloat", rand);
             }
         }
 

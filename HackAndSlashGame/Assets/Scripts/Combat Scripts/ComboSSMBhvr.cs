@@ -13,7 +13,7 @@ public class ComboSSMBhvr : BaseStateMachineBehaviour
         state = StateMachineState.inState;
         gameObject = animator.gameObject;
 
-        if (animator.gameObject.CompareTag("Boss"))
+        if (gameObject.CompareTag("Boss"))
         {
             jonathanController = gameObject.GetComponent<JonathanController>();
             jonathanController.ResetHeading();
@@ -25,10 +25,16 @@ public class ComboSSMBhvr : BaseStateMachineBehaviour
     {
         state = StateMachineState.notInState;
 
-        if (animator.gameObject.CompareTag("Boss"))
+        if (gameObject.CompareTag("Boss"))
         {
             animator.SetBool("OnCooldown", true);
-            jonathanController.StartCooldown(Random.Range(0,1.5f));
+            jonathanController.StartCooldown(Random.Range(0.5f,2));
+        }
+        else if (gameObject.CompareTag("Enemy"))
+        {
+            animator.SetBool("onCooldown", true);
+
+            gameObject.GetComponent<EnemyController>().StartCooldown(1);
         }
     }
 }

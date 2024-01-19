@@ -25,7 +25,6 @@ public class DamageStateBhvr : StateMachineBehaviour
         {
             animator.SetBool("canMove", true);
             animator.SetBool("isAttacking", false);
-            animator.SetBool("isWalking", false);
             animator.SetBool("attack1Bool", false);
             animator.SetBool("attack2Bool", false);
             animator.SetBool("attack3Bool", false);
@@ -34,7 +33,7 @@ public class DamageStateBhvr : StateMachineBehaviour
         }
         else if (gameObject.CompareTag("Enemy"))
         {
-            animator.SetInteger("AttackInt",0);
+            animator.SetFloat("attackFloat", 0);
             animator.SetBool("onCooldown", true);
 
             EnemyController controller = animator.gameObject.GetComponent<EnemyController>();

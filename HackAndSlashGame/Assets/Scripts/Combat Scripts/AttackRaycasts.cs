@@ -84,7 +84,7 @@ public class AttackRaycasts : MonoBehaviour
             else hitList.Add(obj.GetHashCode());
 
 
-            if (obj.tag.Equals("Player"))
+            if (obj.CompareTag("Player"))
             {
                 obj.GetComponent<StateController>().RegisterHit(transform, damage);
             }
@@ -92,7 +92,7 @@ public class AttackRaycasts : MonoBehaviour
             {
                 obj.GetComponent<JonathanController>().RegisterHit(damage);
             }
-            else
+            else if(obj.CompareTag("Enemy"))
             {
                 obj.GetComponent<EnemyController>().RegisterHit(damage);
             }

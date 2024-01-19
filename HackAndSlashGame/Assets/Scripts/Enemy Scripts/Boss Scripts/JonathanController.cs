@@ -5,6 +5,9 @@ using UnityEngine;
 public class JonathanController : MonoBehaviour
 {
     public Transform playerTransform;
+    public int maxHitPoints = 50;
+    private int hitPoints;
+
     private Vector3 playerRay;
 
     private float turnSmoothTime = 0.01f;
@@ -13,9 +16,14 @@ public class JonathanController : MonoBehaviour
 
     private Animator animator;
 
+    private HealthBar healthBar;
+
     void Start()
     {
         animator = GetComponent<Animator>();
+        healthBar = GetComponentInChildren<HealthBar>();
+
+        hitPoints = maxHitPoints;
     }
 
     // Update is called once per frame
@@ -25,7 +33,7 @@ public class JonathanController : MonoBehaviour
         {
             animator.SetTrigger("Combo1Trig");
         }
-
+        
         //find a the player position from the enemy
         playerRay = playerTransform.position - transform.position;
 
@@ -39,7 +47,13 @@ public class JonathanController : MonoBehaviour
 
     public void RegisterHit(int damage) 
     {
-        Debug.Log("Boss was hit");
+        hitPoints -= damage;
+        healthBar.UpdateHealthBar(hitPoints, maxHitPoints);
+
+        if(hitPoints <= 0)
+        {
+            animator.SetTrigger("DeathTrig");
+        }
     }
 
     public Vector3 GetPlayerRay() { return playerRay; }

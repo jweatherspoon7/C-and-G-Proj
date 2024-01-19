@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackBvhr : BaseStateMachineBehaviour
 {
-    public int damage = 0;
+    public int damage = 2;
 
     private GameObject gameObject;
 

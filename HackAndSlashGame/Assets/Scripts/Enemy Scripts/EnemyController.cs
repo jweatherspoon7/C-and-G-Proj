@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour
 
     private Animator animator;
 
-    private FloatingHealthBar healthBar;
+    private HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class EnemyController : MonoBehaviour
 
         animator = GetComponent<Animator>();
 
-        healthBar = GetComponentInChildren<FloatingHealthBar>();
+        healthBar = GetComponentInChildren<HealthBar>();
     }
 
     // Update is called once per frame
